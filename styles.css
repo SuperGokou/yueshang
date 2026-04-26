@@ -131,6 +131,88 @@ a:hover { color: var(--accent); }
 }
 .btn--ghost:hover { background: var(--bg-3); box-shadow: 0 0 0 1px #c2c0b6; color: var(--text); }
 
+/* =============== LANGUAGE SWITCHER =============== */
+.lang-switch { position: relative; }
+.lang-switch__btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0 14px 0 12px;
+}
+.lang-switch__flag {
+  width: 20px; height: 15px;
+  flex: 0 0 auto;
+  border-radius: 2px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.10);
+}
+.lang-switch__panel li img {
+  width: 20px; height: 15px;
+  flex: 0 0 auto;
+  border-radius: 2px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+}
+.lang-switch__label {
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.04em;
+  font-family: var(--font-mono);
+}
+.lang-switch__chev {
+  width: 12px; height: 12px;
+  flex: 0 0 auto;
+  transition: transform .18s ease;
+  opacity: 0.85;
+}
+.lang-switch__btn[aria-expanded="true"] .lang-switch__chev { transform: rotate(180deg); }
+
+.lang-switch__panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 220px;
+  max-height: 360px;
+  overflow-y: auto;
+  margin: 0; padding: 6px;
+  list-style: none;
+  background: var(--bg-3);
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px var(--line-2), 0 12px 32px -8px rgba(20,20,19,0.18), 0 4px 12px rgba(20,20,19,0.08);
+  z-index: 60;
+  animation: ls-fade .15s ease both;
+}
+@keyframes ls-fade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.lang-switch__panel li {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .12s ease, color .12s ease;
+  user-select: none;
+}
+.lang-switch__panel li:hover { background: var(--surface); }
+.lang-switch__panel li[aria-selected="true"] {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.lang-switch__panel li[aria-selected="true"] .ls__name { color: var(--accent); font-weight: 500; }
+.ls__name {
+  font-size: 14px;
+  color: var(--text);
+}
+.ls__code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+/* Custom scrollbar */
+.lang-switch__panel::-webkit-scrollbar { width: 6px; }
+.lang-switch__panel::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 6px; }
+.lang-switch__panel::-webkit-scrollbar-track { background: transparent; }
+
 /* =============== HERO =============== */
 .hero {
   position: relative; padding: 100px 0 80px;

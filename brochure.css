@@ -11,23 +11,26 @@
 }
 
 :root {
-  --brand-1: #2dd4bf;
-  --brand-2: #6366f1;
-  --brand-3: #f59e0b;
-  --gradient: linear-gradient(135deg, #2dd4bf 0%, #6366f1 60%, #f59e0b 110%);
-  --gradient-soft: linear-gradient(135deg, rgba(45,212,191,.10), rgba(99,102,241,.10) 50%, rgba(245,158,11,.10));
-  --ink: #0c1622;
-  --ink-2: #1f2a3a;
-  --muted: #6b7a90;
-  --line: #d9e1ec;
-  --bg: #f6f8fc;
-  --paper: #ffffff;
-  --paper-dark: #0f1722;
-  --accent: #0d9488;
-  --warn: #b91c1c;
+  /* Claude warm palette — terracotta brand on parchment */
+  --brand-1: #c96442;       /* terracotta */
+  --brand-2: #d97757;       /* coral hover */
+  --brand-3: #5b8c5a;       /* muted green for tertiary */
+  --gradient: linear-gradient(135deg, #c96442 0%, #d97757 100%);
+  --gradient-soft: linear-gradient(135deg, rgba(201,100,66,.10), rgba(217,119,87,.06));
+  --ink: #141413;           /* anthropic near-black */
+  --ink-2: #3d3d3a;         /* dark warm */
+  --muted: #5e5d59;         /* olive gray */
+  --line: #e8e6dc;          /* warm border */
+  --bg: #f5f4ed;            /* parchment */
+  --paper: #faf9f5;         /* ivory */
+  --paper-dark: #30302e;    /* warm charcoal (Claude's dark surface) */
+  --accent: #c96442;        /* terracotta */
+  --warn: #b53333;          /* warm crimson */
 
   --font-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-zh-serif: "Noto Serif SC", "PingFang SC", "Microsoft YaHei", serif;
   --font-en: "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Noto Serif SC", "Times New Roman", serif;
 }
 
 * { box-sizing: border-box; }
@@ -38,7 +41,7 @@ html, body {
   color: var(--ink);
   font-family: var(--font-en), var(--font-zh);
   -webkit-font-smoothing: antialiased;
-  font-feature-settings: "ss01", "cv11";
+  line-height: 1.6;
 }
 
 /* ====== Toolbar ====== */
@@ -143,8 +146,8 @@ html, body {
   filter: blur(140px);
   opacity: 0.6;
 }
-.cover__glow--a { top: -200px; left: -150px; background: rgba(45,212,191,0.7); }
-.cover__glow--b { bottom: -260px; right: -200px; background: rgba(99,102,241,0.7); }
+.cover__glow--a { top: -200px; left: -150px; background: rgba(217,119,87,0.45); }
+.cover__glow--b { bottom: -260px; right: -200px; background: rgba(201,100,66,0.35); }
 .cover__grid {
   position: absolute; inset: 0;
   background-image:
@@ -163,16 +166,16 @@ html, body {
 .brand { display: flex; align-items: center; gap: 14px; }
 .brand__mark {
   width: 44px; height: 44px;
-  background: linear-gradient(135deg, rgba(45,212,191,0.18), rgba(99,102,241,0.18));
-  border: 1px solid rgba(45,212,191,0.35);
+  background: linear-gradient(135deg, rgba(201,100,66,0.18), rgba(217,119,87,0.18));
+  border: 1px solid rgba(217,119,87,0.35);
   border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 0 32px rgba(45,212,191,0.3);
+  box-shadow: 0 0 32px rgba(217,119,87,0.30);
 }
 .brand__mark img {
   width: 32px; height: 32px;
   object-fit: contain;
-  filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(45,212,191,0.4));
+  filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(217,119,87,0.40));
 }
 .page:not(.page--cover):not(.page--back):not(.page--section-cover) .brand__mark img {
   filter: none;       /* keep original brown on light pages */
@@ -191,8 +194,9 @@ html, body {
 .brand--lg .brand__mark { width: 56px; height: 56px; }
 
 .cover__title {
+  font-family: var(--font-serif);
   font-size: 56pt;
-  font-weight: 900;
+  font-weight: 500;
   line-height: 1.02;
   letter-spacing: -0.03em;
   margin: 0;
@@ -239,8 +243,9 @@ html, body {
    PAGE 02 · Contents
 =================================================== */
 .contents__title {
-  font-size: 36pt; font-weight: 900;
-  letter-spacing: -0.02em;
+  font-family: var(--font-serif);
+  font-size: 36pt; font-weight: 500;
+  letter-spacing: -0.005em;
   line-height: 1; margin: 0 0 14pt;
   background: var(--gradient);
   -webkit-background-clip: text; background-clip: text;
@@ -610,7 +615,7 @@ html, body {
   border-radius: 999px;
   background: white;
   color: var(--accent);
-  border: 1px solid rgba(13,148,136,0.3);
+  border: 1px solid rgba(201,100,66,0.30);
   font-weight: 600;
 }
 .prof--add { background: var(--gradient); }
@@ -701,7 +706,7 @@ html, body {
 }
 .ag h4 { font-size: 12pt; margin: 0 0 6pt; font-weight: 800; color: var(--c); }
 .ag p { font-size: 9.5pt; color: var(--ink-2); margin: 0; line-height: 1.6; }
-.a-cyan   { --c: #0d9488; }
+.a-cyan   { --c: #c96442; }
 .a-violet { --c: #7c3aed; }
 .a-orange { --c: #ea580c; }
 .a-green  { --c: #059669; }
@@ -848,7 +853,7 @@ html, body {
   margin-top: 14pt;
   padding: 10pt 14pt;
   background: var(--gradient-soft);
-  border: 1px solid rgba(45,212,191,0.3);
+  border: 1px solid rgba(217,119,87,0.30);
   border-radius: 6pt;
   font-size: 9pt;
   color: var(--ink-2);
@@ -966,7 +971,7 @@ html, body {
   position: absolute;
   width: 900px; height: 900px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(45,212,191,0.5) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(217,119,87,0.50) 0%, transparent 70%);
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   filter: blur(120px);

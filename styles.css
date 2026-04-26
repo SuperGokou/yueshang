@@ -972,7 +972,7 @@ a:hover { color: var(--accent); }
 .ind h4 { font-size: 16px; margin: 8px 0 6px; font-weight: 700; }
 .ind p { font-size: 12.5px; color: var(--text-muted); margin: 0; }
 .ind--more { background: var(--gradient-soft); }
-.ind--more h4 { background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.ind--more h4 { color: var(--accent); }
 
 /* =============== INDUSTRY SOLUTIONS =============== */
 .sol-grid { display: grid; gap: 32px; }
@@ -1151,9 +1151,9 @@ a:hover { color: var(--accent); }
   letter-spacing: -0.005em;
   color: var(--accent);
   background: none;
-  -webkit-background-clip: text; background-clip: text;
-  color: transparent;
+  -webkit-background-clip: border-box; background-clip: border-box;
   line-height: 1;
+  font-feature-settings: "tnum";
 }
 .metric__num .unit { font-size: 22px; margin-left: 2px; }
 .metric__label { font-size: 13px; color: var(--text-muted); margin-top: 12px; }
@@ -1195,11 +1195,11 @@ a:hover { color: var(--accent); }
 @media (max-width: 700px) { .team-stats { grid-template-columns: repeat(2, 1fr); } }
 .ts { text-align: center; }
 .ts__num {
-  font-size: 42px; font-weight: 800;
-  letter-spacing: -0.02em; line-height: 1;
-  background: var(--gradient);
-  -webkit-background-clip: text; background-clip: text;
-  color: transparent;
+  font-family: var(--font-serif);
+  font-size: 44px; font-weight: 500;
+  letter-spacing: -0.005em; line-height: 1;
+  color: var(--accent);
+  font-feature-settings: "tnum";
 }
 .ts__num span { font-size: 28px; }
 .ts__label { font-size: 12px; color: var(--text-muted); margin-top: 8px; letter-spacing: 1px; text-transform: uppercase; font-family: ui-monospace, monospace; }

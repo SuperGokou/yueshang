@@ -36,7 +36,17 @@
     </nav>
     <div class="nav__cta">
       <a class="btn btn--ghost" href="index.html#contact">联系</a>
-      <a class="btn btn--solid" href="index.html#demo">免费试用</a>
+      <div class="lang-switch" data-lang="zh">
+        <button class="btn btn--solid lang-switch__btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="选择语言 / Select language">
+          <img class="lang-switch__flag" src="https://flagcdn.com/w40/cn.png" alt="" width="20" height="15" />
+          <span class="lang-switch__label">中</span>
+          <svg class="lang-switch__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <ul class="lang-switch__panel" role="listbox" hidden>
+          <li role="option" data-lang="zh" data-label="中" data-flag="cn" aria-selected="true"><img src="https://flagcdn.com/w40/cn.png" alt="" width="20" height="15"/><span class="ls__name">中文</span><span class="ls__code">ZH</span></li>
+          <li role="option" data-lang="en" data-label="EN" data-flag="gb"><img src="https://flagcdn.com/w40/gb.png" alt="" width="20" height="15"/><span class="ls__name">English</span><span class="ls__code">EN</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>

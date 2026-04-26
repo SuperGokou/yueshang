@@ -1,5 +1,104 @@
 // Xinchen Tech site interactions
 
+// ===== Language switcher (zh / en) — uses Google Translate proxy for live EN
+const TRANSLATE_GOOG_SUFFIX = ".translate.goog";
+function isOnTranslateProxy() {
+  return location.hostname.endsWith(TRANSLATE_GOOG_SUFFIX);
+}
+function toGoogleTranslate(targetLang) {
+  // host.with.dots → host-with-dots.translate.goog (single dots → hyphens, existing hyphens doubled)
+  const encoded = location.hostname.replace(/-/g, "--").replace(/\./g, "-");
+  const u = new URL(location.href);
+  u.hostname = encoded + TRANSLATE_GOOG_SUFFIX;
+  u.searchParams.set("_x_tr_sl", "zh-CN");
+  u.searchParams.set("_x_tr_tl", targetLang);
+  u.searchParams.set("_x_tr_hl", targetLang);
+  return u.toString();
+}
+function fromGoogleTranslate() {
+  if (!isOnTranslateProxy()) return null;
+  const u = new URL(location.href);
+  const stripped = u.hostname.slice(0, -TRANSLATE_GOOG_SUFFIX.length);
+  // Reverse encoding: '--' → '-', single '-' → '.'
+  const original = stripped.replace(/--/g, "\0").replace(/-/g, ".").replace(/\0/g, "-");
+  u.hostname = original;
+  ["_x_tr_sl", "_x_tr_tl", "_x_tr_hl", "_x_tr_pto", "_x_tr_hist"].forEach((k) => u.searchParams.delete(k));
+  return u.toString();
+}
+
+// Pre-select the dropdown to reflect current state if we're already on translate.goog
+(() => {
+  if (!isOnTranslateProxy()) return;
+  const u = new URL(location.href);
+  const tl = u.searchParams.get("_x_tr_tl");
+  if (!tl) return;
+  document.querySelectorAll(".lang-switch").forEach((root) => {
+    const li = root.querySelector(`li[data-lang="${tl}"]`);
+    if (!li) return;
+    root.querySelectorAll("li").forEach((x) => x.removeAttribute("aria-selected"));
+    li.setAttribute("aria-selected", "true");
+    root.dataset.lang = tl;
+    const label = root.querySelector(".lang-switch__label");
+    const flagImg = root.querySelector(".lang-switch__flag");
+    if (label) label.textContent = li.dataset.label || tl.toUpperCase();
+    if (flagImg && li.dataset.flag) flagImg.src = `https://flagcdn.com/w40/${li.dataset.flag}.png`;
+  });
+})();
+
+document.querySelectorAll(".lang-switch").forEach((root) => {
+  const btn = root.querySelector(".lang-switch__btn");
+  const panel = root.querySelector(".lang-switch__panel");
+  const label = root.querySelector(".lang-switch__label");
+  const flagImg = root.querySelector(".lang-switch__flag");
+  if (!btn || !panel) return;
+  const close = () => {
+    panel.hidden = true;
+    btn.setAttribute("aria-expanded", "false");
+  };
+  const open = () => {
+    panel.hidden = false;
+    btn.setAttribute("aria-expanded", "true");
+  };
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    panel.hidden ? open() : close();
+  });
+  panel.addEventListener("click", (e) => {
+    const li = e.target.closest("li[role='option']");
+    if (!li) return;
+    e.stopPropagation();
+    const lang = li.dataset.lang;
+    const isLocal = ["localhost", "127.0.0.1", "0.0.0.0"].includes(location.hostname);
+
+    // Update UI optimistically
+    panel.querySelectorAll("li").forEach((x) => x.removeAttribute("aria-selected"));
+    li.setAttribute("aria-selected", "true");
+    if (label) label.textContent = li.dataset.label || lang.toUpperCase();
+    if (flagImg && li.dataset.flag) flagImg.src = `https://flagcdn.com/w40/${li.dataset.flag}.png`;
+    root.dataset.lang = lang;
+    close();
+
+    // Route to actual translation
+    if (lang === "zh") {
+      const back = fromGoogleTranslate();
+      if (back) location.href = back;
+      // else already on Chinese, no-op
+    } else {
+      if (isLocal) {
+        alert("英文版需在 GitHub Pages 上线访问 (Google Translate 代理无法处理 localhost)。\nThe English version requires the production site — translate proxy can't reach localhost.");
+        return;
+      }
+      location.href = toGoogleTranslate(lang);
+    }
+  });
+  document.addEventListener("click", (e) => {
+    if (!root.contains(e.target)) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+});
+
 // Tech-stack marquee: clone the badge group once for a seamless loop
 const tsTrack = document.querySelector(".techstack__track");
 const tsGroup = tsTrack?.querySelector(".techstack__group");

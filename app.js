@@ -1,5 +1,16 @@
 // Yueshang Tech site interactions
 
+// Tech-stack marquee: clone the badge group once for a seamless loop
+const tsTrack = document.querySelector(".techstack__track");
+const tsGroup = tsTrack?.querySelector(".techstack__group");
+if (tsTrack && tsGroup) {
+  const clone = tsGroup.cloneNode(true);
+  clone.setAttribute("aria-hidden", "true");
+  clone.querySelectorAll("a").forEach((a) => a.setAttribute("tabindex", "-1"));
+  tsTrack.appendChild(clone);
+}
+
+
 // Smooth-scroll active section highlight
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav__links a");

@@ -302,11 +302,39 @@ a:hover { color: var(--accent); }
 .techstack__sub {
   font-size: 13px; color: var(--text-muted);
 }
-.techstack__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
-  gap: 12px;
+.techstack__marquee {
   position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+.techstack__track {
+  display: flex;
+  width: max-content;
+  animation: techstack-scroll 60s linear infinite;
+  will-change: transform;
+}
+.techstack__group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 12px;
+  padding-right: 12px;
+}
+.techstack__group .badge3 {
+  flex: 0 0 auto;
+  width: 220px;
+}
+.techstack__marquee:hover .techstack__track,
+.techstack__marquee:focus-within .techstack__track {
+  animation-play-state: paused;
+}
+@keyframes techstack-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .techstack__track { animation: none; }
+  .techstack__marquee { overflow-x: auto; }
 }
 
 .badge3 {

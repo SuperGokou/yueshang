@@ -4,44 +4,46 @@
    while keeping a unique gradient identity (cyan-violet aurora).
 ================================================================= */
 
-/* ----- Theme tokens (Vercel-inspired · pure B&W) ----- */
+/* ----- Theme tokens (Anthropic Claude · 暖橘 parchment) ----- */
 :root {
-  /* Surfaces — pure black, no blue undertone */
-  --bg: #000000;            /* pure black canvas */
-  --bg-2: #0a0a0a;          /* panel */
-  --bg-3: #171717;          /* elevated surface (Vercel gray-900) */
-  --surface: #1f1f1f;
-  --surface-2: #2a2a2a;
-  --line: rgba(255,255,255,0.08);   /* shadow-as-border subtle */
-  --line-2: rgba(255,255,255,0.14); /* shadow-as-border standard */
+  /* Surfaces — warm parchment paper, never digital */
+  --bg: #f5f4ed;            /* parchment canvas (light mode) */
+  --bg-2: #faf9f5;          /* ivory (cards/elevated) */
+  --bg-3: #ffffff;          /* pure white surface */
+  --surface: #e8e6dc;       /* warm sand (button bg) */
+  --surface-2: #efece2;
+  --line: #f0eee6;          /* border cream — barely visible */
+  --line-2: #e8e6dc;        /* border warm — section dividers */
 
-  /* Text — pure white, Vercel's high-contrast voice */
-  --text: #ffffff;          /* pure white (Vercel uses #fff on dark) */
-  --text-muted: #a1a1a1;    /* gray-500 */
-  --text-dim: #666666;      /* gray-600 */
-  --text-2: #ededed;        /* near-white body */
+  /* Text — warm-toned, never cool */
+  --text: #141413;          /* anthropic near-black (warm olive tint) */
+  --text-muted: #5e5d59;    /* olive gray (secondary) */
+  --text-dim: #87867f;      /* stone gray (tertiary) */
+  --text-2: #4d4c48;        /* charcoal warm (body) */
 
-  /* Accent — Vercel blue for links/CTAs, otherwise the brand IS B&W */
-  --accent: #ffffff;        /* white is the accent on dark Vercel */
-  --accent-2: #ffffff;      /* solid white CTA bg */
-  --accent-3: #fafafa;      /* hover */
-  --accent-blue: #0070f3;   /* Vercel signature blue (links, focus) */
-  --ok: #50e3c2;
-  --ng: #ff5b4f;            /* Vercel ship-red */
+  /* Brand — terracotta + coral, the warm earthy accent */
+  --accent: #c96442;        /* terracotta brand */
+  --accent-2: #c96442;      /* CTA bg */
+  --accent-3: #d97757;      /* coral hover */
+  --accent-blue: #3898ec;   /* focus only */
+  --ok: #5b8c5a;            /* muted green */
+  --ng: #b53333;            /* warm crimson */
 
-  /* Mono accent — drop chromatic gradients */
-  --gradient: linear-gradient(135deg, #ffffff 0%, #a1a1a1 100%);
-  --gradient-soft: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  /* No traditional gradients — warm tonal stepping is the gradient */
+  --gradient: linear-gradient(135deg, #c96442 0%, #d97757 100%);
+  --gradient-soft: linear-gradient(135deg, rgba(201,100,66,.10), rgba(217,119,87,.06));
 
   --radius: 12px;
-  --radius-sm: 6px;         /* Vercel's button radius */
-  --radius-card: 8px;
-  --shadow-ring: 0 0 0 1px rgba(255,255,255,0.10);  /* Vercel's signature shadow-border */
-  --shadow: 0 0 0 1px rgba(255,255,255,0.10), 0 2px 4px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
+  --radius-sm: 8px;         /* Claude's comfortable radius */
+  --radius-card: 12px;
+  --shadow-ring: 0 0 0 1px #d1cfc5;  /* warm ring for buttons */
+  --shadow: 0 0 0 1px #e8e6dc, 0 2px 8px rgba(20,20,19,0.04), 0 12px 24px rgba(20,20,19,0.06);
 
-  --font-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-  --font-en: "Geist", "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Monaco, monospace;
+  --font-zh: "Noto Serif SC", "PingFang SC", "Microsoft YaHei", system-ui, serif;
+  --font-zh-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-en: "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Noto Serif SC", "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
 
 * { box-sizing: border-box; }
@@ -52,11 +54,11 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-en), var(--font-zh);
-  font-feature-settings: "liga"; /* Vercel's signature ligatures */
+  font-family: var(--font-en), var(--font-zh-sans);
+  font-feature-settings: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5;
+  line-height: 1.6; /* Claude's relaxed reading rhythm */
   font-weight: 400;
   overflow-x: hidden;
 }
@@ -70,8 +72,8 @@ a:hover { color: var(--accent); }
 .nav {
   position: sticky; top: 0; z-index: 50;
   backdrop-filter: blur(16px);
-  background: rgba(10,13,18,0.78);
-  border-bottom: 1px solid var(--line);
+  background: rgba(245,244,237,0.85); /* parchment with translucency */
+  border-bottom: 1px solid var(--line-2);
 }
 .nav__inner {
   display: flex; align-items: center; justify-content: space-between;
@@ -79,18 +81,18 @@ a:hover { color: var(--accent); }
 }
 .brand { display: flex; align-items: center; gap: 12px; }
 .brand__mark {
-  width: 32px; height: 32px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--line-2);
-  border-radius: 6px;
+  width: 34px; height: 34px;
+  background: var(--surface);
+  border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
   flex: 0 0 auto;
+  box-shadow: 0 0 0 1px var(--line-2);
 }
 .brand__mark img {
   width: 22px; height: 22px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.95;
+  filter: brightness(0); /* dark on warm sand */
+  opacity: 0.85;
 }
 .brand__text { display: flex; flex-direction: column; line-height: 1; }
 .brand__zh { font-family: var(--font-zh); font-size: 15px; font-weight: 700; letter-spacing: 0.5px; }
@@ -104,30 +106,30 @@ a:hover { color: var(--accent); }
   .nav__links { display: none; }
 }
 
-/* =============== BUTTONS (Vercel-style · pure B&W) =============== */
+/* =============== BUTTONS (Claude-style · 暖橘 + warm sand) =============== */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
-  height: 36px; padding: 0 16px;
-  border-radius: 6px;
-  font-size: 14px; font-weight: 500; /* Vercel button weight */
-  letter-spacing: -0.012em;
+  height: 40px; padding: 0 18px;
+  border-radius: 8px; /* Claude's comfortable radius */
+  font-size: 14px; font-weight: 500;
+  letter-spacing: 0.005em;
   cursor: pointer; user-select: none;
-  border: 0; /* shadow-as-border below */
-  transition: transform .15s ease, background .15s ease, box-shadow .15s ease, color .15s ease;
+  border: 0;
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease, color .18s ease;
 }
-.btn--lg { height: 44px; padding: 0 22px; font-size: 15px; }
+.btn--lg { height: 48px; padding: 0 24px; font-size: 15px; }
 .btn--solid {
-  background: #ffffff; /* solid white */
-  color: #000000;       /* pure black text */
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.18);
+  background: var(--accent); /* terracotta */
+  color: #faf9f5; /* ivory */
+  box-shadow: 0 0 0 1px var(--accent);
 }
-.btn--solid:hover { background: #ededed; color: #000000; transform: translateY(-1px); }
+.btn--solid:hover { background: var(--accent-3); color: #faf9f5; transform: translateY(-1px); box-shadow: 0 0 0 1px var(--accent-3), 0 6px 14px -6px rgba(201,100,66,0.35); }
 .btn--ghost {
-  background: transparent;
-  color: var(--text);
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.20);
+  background: var(--surface); /* warm sand */
+  color: var(--text-2);
+  box-shadow: 0 0 0 1px #d1cfc5;
 }
-.btn--ghost:hover { background: rgba(255,255,255,0.06); box-shadow: 0 0 0 1px rgba(255,255,255,0.30); }
+.btn--ghost:hover { background: var(--bg-3); box-shadow: 0 0 0 1px #c2c0b6; color: var(--text); }
 
 /* =============== HERO =============== */
 .hero {
@@ -151,8 +153,8 @@ a:hover { color: var(--accent); }
   opacity: 0.5;
   pointer-events: none;
 }
-.hero__glow--a { top: -200px; left: -100px; background: rgba(255,255,255,0.04); }
-.hero__glow--b { top: -100px; right: -150px; background: rgba(255,255,255,0.03); }
+.hero__glow--a { top: -200px; left: -100px; background: rgba(217,119,87,0.16); }
+.hero__glow--b { top: -100px; right: -150px; background: rgba(201,100,66,0.10); }
 
 .hero__inner {
   position: relative;
@@ -189,17 +191,18 @@ a:hover { color: var(--accent); }
 }
 
 .hero__title {
-  font-size: clamp(40px, 5.8vw, 72px);
-  line-height: 1.00;
-  font-weight: 600; /* Vercel display weight */
-  letter-spacing: -0.045em; /* Vercel's extreme negative tracking — text as compressed code */
-  margin: 0 0 24px;
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 5.6vw, 64px);
+  line-height: 1.10; /* Claude's tight-but-not-compressed */
+  font-weight: 500; /* Claude's single serif weight */
+  letter-spacing: -0.005em;
+  margin: 0 0 28px;
   color: var(--text);
 }
 .hero__title em {
-  font-style: normal;
-  color: var(--text-muted); /* B&W only — the em is a tonal shift, not a color */
-  font-weight: 600;
+  font-style: italic; /* serif italic carries its own weight */
+  color: var(--accent); /* terracotta */
+  font-weight: 500;
 }
 .hero__sub {
   font-size: 18px; color: var(--text-muted);
@@ -219,10 +222,11 @@ a:hover { color: var(--accent); }
 @media (max-width: 600px) { .hero__stats { grid-template-columns: repeat(2, 1fr); } }
 
 .stat__num {
-  font-size: 32px; font-weight: 600;
-  letter-spacing: -0.040em;
-  color: var(--text);
-  font-feature-settings: "liga", "tnum";
+  font-family: var(--font-serif);
+  font-size: 36px; font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--accent); /* terracotta accents the numbers */
+  font-feature-settings: "tnum";
 }
 .stat__num .unit { font-size: 16px; margin-left: 2px; opacity: 0.8; }
 .stat__label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
@@ -316,15 +320,17 @@ a:hover { color: var(--accent); }
   margin-bottom: 12px;
 }
 .compass__title {
+  font-family: var(--font-serif);
   font-size: clamp(26px, 3.4vw, 40px);
-  font-weight: 600;
-  letter-spacing: -0.040em;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  line-height: 1.20;
   margin: 0 0 10px;
   color: var(--text);
 }
 .compass__title em {
-  font-style: normal;
-  color: var(--text-muted);
+  font-style: italic;
+  color: var(--accent);
 }
 .compass__sub {
   color: var(--text-muted);
@@ -583,9 +589,11 @@ a:hover { color: var(--accent); }
 .section--alt { background: var(--bg-2); }
 .section__head { text-align: center; max-width: 720px; margin: 0 auto 60px; }
 .section__title {
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 600;
-  letter-spacing: -0.045em;
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  line-height: 1.20;
   margin: 0 0 16px;
 }
 .section__sub { color: var(--text-muted); font-size: 17px; }
@@ -1074,9 +1082,10 @@ a:hover { color: var(--accent); }
   text-align: center;
 }
 .metric__num {
-  font-size: 44px; font-weight: 600;
-  letter-spacing: -0.045em;
-  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: 48px; font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--accent);
   background: none;
   -webkit-background-clip: text; background-clip: text;
   color: transparent;

@@ -162,6 +162,18 @@ a:hover { color: var(--accent); }
 }
 .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
 .dot--green { background: var(--ok); box-shadow: 0 0 10px var(--ok); }
+.eyebrow__num {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: ui-monospace, monospace;
+  font-size: 10.5px; font-weight: 700;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 36%, transparent);
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  margin-right: 2px;
+}
 
 .hero__title {
   font-size: clamp(40px, 5.5vw, 68px);
@@ -268,6 +280,144 @@ a:hover { color: var(--accent); }
   background: var(--gradient-soft);
   border: 1px solid rgba(94,234,212,0.3);
   margin-left: auto; border-bottom-right-radius: 4px;
+}
+
+/* =============== COMPASS · 一目了然 =============== */
+.compass {
+  padding: 64px 0 72px;
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(34,211,238,0.06), transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(167,139,250,0.06), transparent 60%),
+    var(--bg);
+}
+.compass__head {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.compass__eyebrow {
+  display: inline-block;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.compass__title {
+  font-size: clamp(26px, 3.4vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+}
+.compass__title em {
+  font-style: normal;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+.compass__sub {
+  color: var(--text-muted);
+  font-size: 14.5px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.compass__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 1100px) { .compass__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .compass__grid { grid-template-columns: 1fr; } }
+
+.cmp {
+  --c: var(--accent);
+  position: relative;
+  display: flex; flex-direction: column;
+  padding: 24px 22px 22px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--text);
+  overflow: hidden;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.cmp::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--c);
+  opacity: 0.6;
+  transition: opacity .25s ease, width .25s ease;
+}
+.cmp:hover {
+  transform: translateY(-4px);
+  border-color: var(--c);
+  box-shadow: 0 18px 40px -20px color-mix(in srgb, var(--c) 60%, transparent);
+}
+.cmp:hover::before { opacity: 1; width: 5px; }
+
+.cmp--cyan   { --c: #22D3EE; }
+.cmp--violet { --c: #A78BFA; }
+.cmp--amber  { --c: #FBBF24; }
+.cmp--green  { --c: #34D399; }
+
+.cmp__num {
+  position: absolute; top: 18px; right: 22px;
+  font-family: ui-monospace, monospace;
+  font-size: 11px; font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+}
+.cmp__icon {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--c) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c) 36%, transparent);
+  color: var(--c);
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+.cmp__icon svg { width: 22px; height: 22px; }
+.cmp h3 {
+  font-size: 17px; font-weight: 700;
+  margin: 0 0 4px;
+  letter-spacing: -0.005em;
+}
+.cmp > p {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin: 0 0 14px;
+  min-height: 32px;
+}
+.cmp ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: flex; flex-direction: column; gap: 6px;
+  flex: 1;
+}
+.cmp ul li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 12.5px;
+  color: var(--text);
+  line-height: 1.5;
+}
+.cmp ul li::before {
+  content: "";
+  position: absolute; left: 0; top: 9px;
+  width: 5px; height: 5px;
+  background: var(--c);
+  border-radius: 50%;
+}
+.cmp__cta {
+  display: inline-flex; align-items: center;
+  font-size: 13px; font-weight: 700;
+  color: var(--c);
+  letter-spacing: 0.01em;
+  margin-top: auto;
 }
 
 /* =============== TECH STACK BADGES =============== */

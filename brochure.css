@@ -992,6 +992,24 @@ html, body {
   color: white;
 }
 .back__sub { font-size: 13pt; color: rgba(255,255,255,0.6); margin: 8pt 0 0; }
+.back__cta {
+  margin: 18pt 0 0;
+  padding: 14pt 18pt;
+  background: rgba(217,119,87,0.12);
+  border-left: 3pt solid var(--accent);
+  border-radius: 6pt;
+  display: flex;
+  align-items: center;
+  gap: 14pt;
+}
+.back__cta-tag {
+  font-family: var(--font-serif);
+  font-size: 14pt;
+  font-weight: 500;
+  color: var(--accent-3, #d97757);
+  white-space: nowrap;
+}
+.back__cta p { margin: 0; font-size: 11pt; color: rgba(255,255,255,0.85); line-height: 1.55; }
 .back__contact { padding-top: 14pt; }
 .back__row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18pt; }
 .back__row h5 {

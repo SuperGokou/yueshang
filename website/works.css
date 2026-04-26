@@ -325,68 +325,13 @@
 .ecom-cart b { font-size: 16px; color: var(--ok); display: block; }
 .ecom-cart small { font-size: 11px; color: var(--text-muted); }
 
-/* KidsBot mock */
+/* Real product screenshot covers (CASE 04 / 05 / 06 / 07) */
 .work__cover--kidsbot {
   background: radial-gradient(ellipse at top, rgba(251,191,36,0.15), transparent 70%), var(--bg-2);
 }
-.kb-mock { display: flex; align-items: flex-end; gap: 16px; max-width: 360px; }
-.kb-bot {
-  width: 64px; height: 64px;
-  background: rgba(251,191,36,0.15);
-  border: 1px solid rgba(251,191,36,0.4);
-  color: #fbbf24;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  flex: 0 0 auto;
-}
-.kb-bot svg { width: 36px; height: 36px; }
-.kb-bubbles { display: flex; flex-direction: column; gap: 6px; }
-.kb-bubble {
-  padding: 8px 12px;
-  background: var(--bg-3);
-  border-radius: 12px;
-  font-size: 12px;
-  color: var(--text);
-  border-bottom-left-radius: 4px;
-  max-width: 220px;
-}
-.kb-bubble--user {
-  background: rgba(251,191,36,0.18);
-  border: 1px solid rgba(251,191,36,0.3);
-  color: var(--accent-3);
-  align-self: flex-end;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 4px;
-}
-
-/* AutoLoto mock */
 .work__cover--auto {
   background: radial-gradient(ellipse at center, rgba(251,146,60,0.12), transparent 70%), var(--bg-2);
 }
-.auto-mock { width: 100%; max-width: 380px; }
-.auto-flow { display: flex; align-items: center; gap: 6px; margin-bottom: 18px; flex-wrap: wrap; justify-content: center; }
-.auto-step {
-  padding: 10px 16px;
-  background: var(--bg-3);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font-family: ui-monospace, monospace;
-  font-size: 12.5px;
-  font-weight: 700;
-  color: var(--text);
-}
-.auto-step--out { background: var(--gradient); color: var(--bg); border-color: transparent; }
-.auto-arr { color: var(--accent-3); font-weight: 700; }
-.auto-cron {
-  text-align: center;
-  padding: 10px;
-  background: var(--bg-3);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-.auto-cron code { font-size: 12px; color: var(--accent-3); font-family: ui-monospace, monospace; }
-
-/* Real product screenshot covers (CASE 06 / 07) */
 .work__cover--epilepsy {
   background: radial-gradient(ellipse at center, rgba(248,113,113,0.12), transparent 70%), var(--bg-2);
 }

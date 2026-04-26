@@ -57,14 +57,16 @@ Yueshang/
 │   ├── data/seed/                  ← HS Code / 合规 / 询盘模板种子
 │   └── tests/
 │
-├── website/                        ← 产品 3: 官方网站 + 公司彩页
-│   ├── index.html                  ← 官网首页
-│   ├── styles.css
-│   ├── app.js
-│   ├── brochure.html               ← 公司彩页 (20 页, A4 横版, 可打印)
-│   └── brochure.css
-│
-└── brochure/                       ← (预留: 印刷输出版本)
+├── index.html                      ← 产品 3: 官网首页 (GH Pages 入口)
+├── styles.css
+├── app.js
+├── works.html                      ← 作品集页面
+├── works.css
+├── brochure.html                   ← 公司彩页 (20 页, A4 横版, 可打印)
+├── brochure.css
+├── public/                         ← 图片素材 (logo, screenshots, university logos)
+├── logo/                           ← brochure 用的 logo 副本
+└── universities/                   ← brochure 用的大学 logo
 ```
 
 ---
@@ -92,11 +94,13 @@ uvicorn yueshang_copilot.api.main:app --reload --port 8000
 
 ### 3) 官方网站 + 彩页（本地预览）
 ```bash
-cd website
 python -m http.server 8080
 # 打开 http://localhost:8080/index.html
+# 打开 http://localhost:8080/works.html
 # 打开 http://localhost:8080/brochure.html (20 页, 浏览器打印即得 PDF)
 ```
+
+部署: GitHub Pages 直接服务于仓库根目录,Settings → Pages → Source: `main` → `/ (root)`。
 
 ---
 

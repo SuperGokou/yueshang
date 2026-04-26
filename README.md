@@ -5,6 +5,13 @@
 
 让中国工厂也用得起的 AI 工厂大脑 · AI for Cross-Border Manufacturing
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-supergokou.github.io%2Fyueshang-7C3AED?style=for-the-badge&logo=github&logoColor=white)](https://supergokou.github.io/yueshang/)
+[![Copilot Demo](https://img.shields.io/badge/Copilot%20Demo-yuechangcopilot-06B6D4?style=for-the-badge&logo=githubpages&logoColor=white)](https://supergokou.github.io/yuechangcopilot/)
+[![Stack](https://img.shields.io/badge/Stack-Python%20%7C%20FastAPI%20%7C%20YOLOv8%20%7C%20RAG-F59E0B?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/License-Proprietary-DC2626?style=for-the-badge)](#)
+
+**[在线官网 →](https://supergokou.github.io/yueshang/)**  ·  **[作品集 →](https://supergokou.github.io/yueshang/works.html)**  ·  **[公司彩页 →](https://supergokou.github.io/yueshang/brochure.html)**
+
 </div>
 
 ---

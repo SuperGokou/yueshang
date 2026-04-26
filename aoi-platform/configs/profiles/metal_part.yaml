@@ -1,0 +1,33 @@
+name: metal_part
+display_name_zh: 五金 / 冲压件
+display_name_en: Metal / Stamped Part
+description: |
+  Metal stamping/CNC parts. Higher reflection so defaults are tuned for high contrast.
+
+defect_categories:
+  - { id: 1, code: burr,       label_zh: 毛刺,   label_en: Burr,       severity: major,    group: structural, color: "#FF6600" }
+  - { id: 2, code: dent,       label_zh: 凹痕,   label_en: Dent,       severity: major,    group: structural, color: "#CC3300" }
+  - { id: 3, code: scratch,    label_zh: 划伤,   label_en: Scratch,    severity: major,    group: surface,    color: "#FF9900" }
+  - { id: 4, code: rust,       label_zh: 锈蚀,   label_en: Rust,       severity: critical, group: contamination, color: "#996633" }
+  - { id: 5, code: deformation,label_zh: 变形,   label_en: Deformation,severity: critical, group: structural, color: "#CC0000" }
+
+localizer:
+  strategy: opencv_perspective
+
+roi_detector:
+  strategy: grid
+  params: { rows: 1, cols: 1 }
+
+routes:
+  - name: opencv_anomaly
+    enabled: true
+    params:
+      dark_threshold: 80
+      bright_threshold: 245
+  - name: highpass_edge
+    enabled: true
+    params:
+      edge_density_threshold: 0.10
+
+fusion:
+  strategy: any_positive

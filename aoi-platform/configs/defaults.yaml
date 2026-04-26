@@ -1,0 +1,53 @@
+# Yueshang AOI - global defaults. Profiles overlay on top.
+name: default
+display_name_zh: 通用
+display_name_en: Generic
+version: 1.0.0
+
+defect_categories: []   # populated per-profile
+
+localizer:
+  strategy: opencv_perspective
+  params:
+    block_size: 51
+    c: 5
+    min_area_ratio: 0.10
+
+roi_detector:
+  strategy: yolo_box
+  model_path: null
+  params:
+    conf: 0.30
+    max_det: 300
+
+routes:
+  - name: yolo_cls
+    enabled: false   # off until model is supplied
+    params:
+      confidence_threshold: 0.55
+      ok_class: ok
+      imgsz: 224
+
+  - name: golden_match
+    enabled: false
+    params:
+      similarity_threshold: 0.78
+      resize_to: 96
+
+  - name: opencv_anomaly
+    enabled: true
+    params:
+      dark_threshold: 60
+      bright_threshold: 220
+      min_blob_area: 8
+
+  - name: highpass_edge
+    enabled: true
+    params:
+      edge_density_threshold: 0.06
+      canny_low: 60
+      canny_high: 160
+
+fusion:
+  strategy: any_positive
+  min_routes_for_ng: 1

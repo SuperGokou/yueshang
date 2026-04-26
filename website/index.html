@@ -1,0 +1,1001 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>悦尚科技 · AI for Cross-Border Manufacturing</title>
+  <meta name="description" content="悦尚科技 — 为外贸工厂和海外品牌方提供 AI 视觉质检 (YueshangAOI) 与出海智能 Copilot (YueshangCopilot) 的垂直方案商。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="#top" aria-label="悦尚科技">
+      <span class="brand__mark"><img src="public/logo/yueshang-mark-128.png" alt="悦尚" /></span>
+      <span class="brand__text">
+        <span class="brand__zh">悦尚科技</span>
+        <span class="brand__en">YUESHANG · TECH</span>
+      </span>
+    </a>
+    <nav class="nav__links">
+      <a href="#products">产品</a>
+      <a href="#aoi">视觉质检</a>
+      <a href="#copilot">出海 Copilot</a>
+      <a href="#solutions">行业方案</a>
+      <a href="works.html">作品集</a>
+      <a href="#about">关于我们</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="btn btn--ghost" href="#contact">联系</a>
+      <a class="btn btn--solid" href="#demo">免费试用</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="top" class="hero">
+  <div class="hero__bg">
+    <div class="hero__grid"></div>
+    <div class="hero__glow hero__glow--a"></div>
+    <div class="hero__glow hero__glow--b"></div>
+  </div>
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <div class="eyebrow">
+        <span class="dot"></span>
+        AI for Cross-Border Manufacturing
+      </div>
+      <h1 class="hero__title">
+        让中国工厂<br />
+        也用得起的 <em>AI 工厂大脑</em>
+      </h1>
+      <p class="hero__sub">
+        悦尚科技为外贸工厂、海外仓与品牌方提供
+        <b>开机即用的视觉质检</b>
+        与
+        <b>多语种出海 Copilot</b>。
+        过去 <b>100+ 万</b> 的 AOI 设备，我们 <b>20–40 万</b> 搞定，配置一行 YAML 即可换品类。
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--solid btn--lg" href="#demo">查看实时 Demo</a>
+        <a class="btn btn--ghost btn--lg" href="#products">了解产品</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__num">99.2<span class="unit">%</span></div>
+          <div class="stat__label">键帽检测 mAP50</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">97.5<span class="unit">%</span></div>
+          <div class="stat__label">瑕疵分类准确率</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">7<span class="unit">类</span></div>
+          <div class="stat__label">内置产品 Profile</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">8<span class="unit">语</span></div>
+          <div class="stat__label">报告与 Copilot</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="card card--floating">
+        <div class="card__head">
+          <span class="dot dot--green"></span>
+          <span>实时检测 · YueshangAOI</span>
+        </div>
+        <div class="card__body">
+          <div class="diag">
+            <div class="diag__row">
+              <div class="diag__cell ok">OK</div><div class="diag__cell ok">OK</div>
+              <div class="diag__cell ng">NG</div><div class="diag__cell ok">OK</div>
+              <div class="diag__cell ok">OK</div><div class="diag__cell ok">OK</div>
+              <div class="diag__cell ok">OK</div>
+            </div>
+            <div class="diag__row">
+              <div class="diag__cell ok">OK</div><div class="diag__cell ok">OK</div>
+              <div class="diag__cell ok">OK</div><div class="diag__cell ng">NG</div>
+              <div class="diag__cell ok">OK</div><div class="diag__cell ok">OK</div>
+              <div class="diag__cell ok">OK</div>
+            </div>
+            <div class="diag__row">
+              <div class="diag__cell ok">OK</div><div class="diag__cell ok">OK</div>
+              <div class="diag__cell ok">OK</div><div class="diag__cell ok">OK</div>
+              <div class="diag__cell ng">NG</div><div class="diag__cell ok">OK</div>
+              <div class="diag__cell ok">OK</div>
+            </div>
+          </div>
+          <div class="badges">
+            <span class="badge badge--ng">3 NG</span>
+            <span class="badge badge--ok">18 OK</span>
+            <span class="badge">2.4s</span>
+          </div>
+        </div>
+      </div>
+      <div class="card card--secondary">
+        <div class="card__head"><span>询盘速回 · YueshangCopilot</span></div>
+        <div class="card__body small">
+          <p class="msg msg--in">"Can you make 5,000 custom-printed mugs by Aug?"</p>
+          <p class="msg msg--out">Hi Mark — happy to help. To draft an accurate quote, could you share your target unit price and shipping port? Typical lead time is 30 days...</p>
+          <div class="badges">
+            <span class="badge">EN</span>
+            <span class="badge">Intent: bulk inquiry</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TECH BADGES ================= -->
+<section class="techstack">
+  <div class="container">
+    <div class="techstack__head">
+      <span class="techstack__label">POWERED BY · 技术栈</span>
+      <span class="techstack__sub">业界最强的开源与商用模型，可插拔自由组合</span>
+    </div>
+    <div class="techstack__grid">
+      <a class="badge3 b-python" target="_blank" rel="noopener" href="https://python.org">
+        <img src="https://cdn.simpleicons.org/python/3776AB" alt="" width="22" height="22" />
+        <div class="badge3__txt"><span>Python</span><small>3.10+</small></div>
+      </a>
+      <a class="badge3 b-yolo" target="_blank" rel="noopener" href="https://ultralytics.com">
+        <span class="badge3__mark">Y8</span>
+        <div class="badge3__txt"><span>YOLOv8</span><small>Ultralytics</small></div>
+      </a>
+      <a class="badge3 b-onnx" target="_blank" rel="noopener" href="https://onnxruntime.ai">
+        <img src="https://cdn.simpleicons.org/onnx/FF6F00" alt="" width="22" height="22" />
+        <div class="badge3__txt"><span>ONNX Runtime</span><small>Web · Edge</small></div>
+      </a>
+      <a class="badge3 b-opencv" target="_blank" rel="noopener" href="https://opencv.org">
+        <img src="https://cdn.simpleicons.org/opencv/5C3EE8" alt="" width="22" height="22" />
+        <div class="badge3__txt"><span>OpenCV</span><small>4.x</small></div>
+      </a>
+      <a class="badge3 b-claude" target="_blank" rel="noopener" href="https://anthropic.com">
+        <img src="https://cdn.simpleicons.org/anthropic/D97757" alt="" width="22" height="22" />
+        <div class="badge3__txt"><span>Claude</span><small>Anthropic · 4.x</small></div>
+      </a>
+      <a class="badge3 b-qwen" target="_blank" rel="noopener" href="https://qwen.alibaba.com">
+        <img src="https://cdn.simpleicons.org/alibabacloud/615CED" alt="" width="22" height="22" />
+        <div class="badge3__txt"><span>Qwen 2.5</span><small>阿里通义</small></div>
+      </a>
+      <a class="badge3 b-deepseek" target="_blank" rel="noopener" href="https://deepseek.com">
+        <span class="badge3__mark">DS</span>
+        <div class="badge3__txt"><span>DeepSeek</span><small>V3</small></div>
+      </a>
+      <a class="badge3 b-fastapi" target="_blank" rel="noopener" href="https://fastapi.tiangolo.com">
+        <img src="https://cdn.simpleicons.org/fastapi/009688" alt="" width="22" height="22" />
+        <div class="badge3__txt"><span>FastAPI</span><small>API Gateway</small></div>
+      </a>
+      <a class="badge3 b-hf" target="_blank" rel="noopener" href="https://huggingface.co/BAAI/bge-m3">
+        <img src="https://cdn.simpleicons.org/huggingface/FF9D00" alt="" width="22" height="22" />
+        <div class="badge3__txt"><span>BGE-M3</span><small>Multilingual</small></div>
+      </a>
+      <a class="badge3 b-chroma" target="_blank" rel="noopener" href="https://www.trychroma.com">
+        <span class="badge3__mark">CD</span>
+        <div class="badge3__txt"><span>ChromaDB</span><small>Vector Store</small></div>
+      </a>
+      <a class="badge3 b-docker" target="_blank" rel="noopener" href="https://www.docker.com">
+        <img src="https://cdn.simpleicons.org/docker/2496ED" alt="" width="22" height="22" />
+        <div class="badge3__txt"><span>Docker</span><small>One-click Deploy</small></div>
+      </a>
+      <a class="badge3 b-nvidia" target="_blank" rel="noopener" href="https://developer.nvidia.com/embedded/jetson-modules">
+        <img src="https://cdn.simpleicons.org/nvidia/76B900" alt="" width="22" height="22" />
+        <div class="badge3__txt"><span>NVIDIA Jetson</span><small>Edge AI</small></div>
+      </a>
+      <a class="badge3 b-pydantic" target="_blank" rel="noopener" href="https://pydantic.dev">
+        <img src="https://cdn.simpleicons.org/pydantic/E92063" alt="" width="22" height="22" />
+        <div class="badge3__txt"><span>Pydantic</span><small>Schema · v2</small></div>
+      </a>
+      <a class="badge3 b-postgres" target="_blank" rel="noopener" href="https://postgresql.org">
+        <img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="" width="22" height="22" />
+        <div class="badge3__txt"><span>PostgreSQL</span><small>+ pgvector</small></div>
+      </a>
+      <a class="badge3 b-ts" target="_blank" rel="noopener" href="https://www.typescriptlang.org">
+        <img src="https://cdn.simpleicons.org/typescript/3178C6" alt="" width="22" height="22" />
+        <div class="badge3__txt"><span>TypeScript</span><small>前端 / SDK</small></div>
+      </a>
+      <a class="badge3 b-k8s" target="_blank" rel="noopener" href="https://kubernetes.io">
+        <img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="" width="22" height="22" />
+        <div class="badge3__txt"><span>Kubernetes</span><small>K8s · 弹性部署</small></div>
+      </a>
+      <a class="badge3 b-rag">
+        <span class="badge3__mark">RAG</span>
+        <div class="badge3__txt"><span>Retrieval-AG</span><small>多语种检索增强</small></div>
+      </a>
+      <a class="badge3 b-llm">
+        <span class="badge3__mark">LLM</span>
+        <div class="badge3__txt"><span>LLM Router</span><small>Claude / Qwen / DS</small></div>
+      </a>
+      <a class="badge3 b-mcp" target="_blank" rel="noopener" href="https://modelcontextprotocol.io">
+        <span class="badge3__mark">MCP</span>
+        <div class="badge3__txt"><span>Model Context</span><small>工具调用协议</small></div>
+      </a>
+      <a class="badge3 b-wiki">
+        <span class="badge3__mark">KB</span>
+        <div class="badge3__txt"><span>LLM-Wiki</span><small>私域知识图谱</small></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUCT MATRIX ================= -->
+<section id="products" class="section">
+  <div class="container">
+    <div class="section__head">
+      <div class="eyebrow"><span class="dot"></span>Product Matrix</div>
+      <h2 class="section__title">三条产品线 · 一个工厂大脑</h2>
+      <p class="section__sub">软件平台 + 硬件终端 + 数据中台。订阅 + 一次性 + 服务费多元收入。</p>
+    </div>
+
+    <div class="cards">
+      <article class="pcard">
+        <div class="pcard__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>
+        </div>
+        <h3>YueshangAOI</h3>
+        <p class="pcard__lead">通用工业视觉质检平台</p>
+        <ul class="pcard__features">
+          <li>配置驱动，一行 YAML 切换品类</li>
+          <li>自研多算法融合引擎，召回率与误报率双优</li>
+          <li>浏览器 / 边缘盒 / 服务器多形态部署</li>
+          <li>多语种报告（中英西葡）</li>
+        </ul>
+        <a class="pcard__cta" href="#aoi">了解 AOI &rarr;</a>
+      </article>
+
+      <article class="pcard pcard--accent">
+        <div class="pcard__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+        </div>
+        <h3>YueshangCopilot</h3>
+        <p class="pcard__lead">出海 AI Copilot</p>
+        <ul class="pcard__features">
+          <li>多语种 RAG 知识库（中英西葡阿日德法）</li>
+          <li>HS Code 助手 + 合规雷达</li>
+          <li>询盘速回 + 详情页生成</li>
+          <li>买家背调 + 节奏化跟进</li>
+        </ul>
+        <a class="pcard__cta" href="#copilot">了解 Copilot &rarr;</a>
+      </article>
+
+      <article class="pcard">
+        <div class="pcard__icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><circle cx="7" cy="7" r="1"/><circle cx="7" cy="17" r="1"/></svg>
+        </div>
+        <h3>YueshangCloud</h3>
+        <p class="pcard__lead">数据中台 · BI · 工单流</p>
+        <ul class="pcard__features">
+          <li>跨工厂良率看板</li>
+          <li>客户级 SLA 报告（按周自动推送）</li>
+          <li>NG 工单流 + 闭环跟踪</li>
+          <li>API / Webhook 对接 ERP / WMS / MES</li>
+        </ul>
+        <a class="pcard__cta" href="#cases">查看效果 &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AOI DETAIL ================= -->
+<section id="aoi" class="section section--alt">
+  <div class="container split">
+    <div class="split__copy">
+      <div class="eyebrow"><span class="dot"></span>YueshangAOI</div>
+      <h2>视觉质检 · 一份代码 · 全品类</h2>
+      <p class="lede">
+        从键盘到连接器，从注塑件到 PCBA — 我们的检测平台靠 7 个内置 Profile 覆盖外贸主力品类。
+        新品类 = 写一份 YAML，2 周上线，不用花 6 个月做项目。
+      </p>
+      <div class="featgrid">
+        <div class="featgrid__cell">
+          <h4>三阶段流水线</h4>
+          <p>产品定位 → ROI 切分 → 多路融合判定。每一阶段都是可插拔的策略。</p>
+        </div>
+        <div class="featgrid__cell">
+          <h4>多算法融合引擎</h4>
+          <p>自研多路融合架构，深度学习与几何先验互补，确保高召回低误报。</p>
+        </div>
+        <div class="featgrid__cell">
+          <h4>三种部署形态</h4>
+          <p>浏览器 ONNX (无服务器) / Edge Box (¥18k+) / 服务器 (大规模) 任选其一。</p>
+        </div>
+        <div class="featgrid__cell">
+          <h4>多语种 SOP 对接</h4>
+          <p>对接海外品牌方 SOP，输出中英西葡四语报告，可直接进客户系统。</p>
+        </div>
+      </div>
+      <a class="btn btn--solid" href="#demo">观看 Demo</a>
+    </div>
+    <div class="split__visual">
+      <figure class="aoi-demo">
+        <div class="aoi-demo__caption">
+          <span class="aoi-demo__label">REAL CASE · 实测样本</span>
+          <span class="aoi-demo__file">HXMHSFGBH4A000144V_1.7th</span>
+        </div>
+        <div class="aoi-demo__frame">
+          <img src="public/keyboard_aoi_demo.png" alt="键盘 AOI 检测真实结果 - 实测案例" loading="lazy" />
+          <div class="aoi-demo__legend">
+            <span class="lg lg--ok">OK</span>
+            <span class="lg lg--ng">NG · 标注</span>
+          </div>
+        </div>
+        <div class="profiles">
+          <span>键盘</span><span>连接器</span><span>充电器</span>
+          <span>注塑件</span><span>五金</span><span>PCBA</span><span>玩具</span>
+          <span>+ 自定义</span>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COPILOT DETAIL ================= -->
+<section id="copilot" class="section">
+  <div class="container split split--reverse">
+    <div class="split__visual">
+      <div class="agents">
+        <div class="agent a-cyan">
+          <div class="agent__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/><path d="m3.5 6.5 8.5 7 8.5-7"/></svg>
+          </div>
+          <span class="agent__tag">EN · ZH · ES · PT</span>
+          <h4>询盘速回</h4>
+          <p>邮件 → 多语种专业回复 + 跟进节奏</p>
+        </div>
+        <div class="agent a-violet">
+          <div class="agent__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h14M5 15h14M10 4 8 20M16 4l-2 16"/></svg>
+          </div>
+          <span class="agent__tag">HS · HTS · TARIC</span>
+          <h4>HS Code 助手</h4>
+          <p>产品描述 → 6/8/10 位编码 + 关税</p>
+        </div>
+        <div class="agent a-orange">
+          <div class="agent__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <span class="agent__tag">CE · FCC · RoHS</span>
+          <h4>合规雷达</h4>
+          <p>自动扫描 CE / FCC / RoHS / REACH / CCC 风险</p>
+        </div>
+        <div class="agent a-green">
+          <div class="agent__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18l-1.5 11A2 2 0 0 1 17.5 21h-11A2 2 0 0 1 4.5 19L3 8Z"/><path d="M8 8V5a4 4 0 1 1 8 0v3"/></svg>
+          </div>
+          <span class="agent__tag">Amazon · Shopify · 阿里</span>
+          <h4>详情页生成</h4>
+          <p>多平台 / 多语种 SEO 详情页一键产出</p>
+        </div>
+        <div class="agent a-amber">
+          <div class="agent__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.5-4.5"/></svg>
+          </div>
+          <span class="agent__tag">WHOIS · DOMAIN · LINKEDIN</span>
+          <h4>买家背调</h4>
+          <p>邮箱 / 网站 → 公司画像 + 风险标签</p>
+        </div>
+        <div class="agent a-purple">
+          <div class="agent__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5v-13Z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5v-13Z"/><path d="M7 8h2M7 11h2M15 8h2M15 11h2"/></svg>
+          </div>
+          <span class="agent__tag">RAG · BGE-M3 · ChromaDB</span>
+          <h4>私域 RAG</h4>
+          <p>上传文档 → 多语种问答 + 引用追溯</p>
+        </div>
+      </div>
+    </div>
+    <div class="split__copy">
+      <div class="eyebrow"><span class="dot"></span>YueshangCopilot</div>
+      <h2>外贸老板的<br/>第一个 AI 同事</h2>
+      <p class="lede">
+        把公司产品资料、SOP、海关税则、合规要求内化成一个可问可答的 AI 同事，
+        懂中文也懂买家的母语。8 种语言、6 个开箱即用 Agent，外贸老板用 30 分钟就能上手。
+      </p>
+      <div class="quote">
+        <p>"过去 5 个客服处理 200 封询盘要 3 天，现在 1 个人 + Copilot 半天搞定。"</p>
+        <small>— 试点客户 · 宁波某五金外贸厂</small>
+      </div>
+      <a class="btn btn--solid" href="#demo">立即试用</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INDUSTRIES ================= -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__head">
+      <div class="eyebrow"><span class="dot"></span>Industries</div>
+      <h2 class="section__title">服务这些行业</h2>
+    </div>
+    <div class="indlist">
+      <div class="ind"><span class="ind__num">01</span><h4>键盘 / 3C 配件</h4><p>键帽、外壳、按键</p></div>
+      <div class="ind"><span class="ind__num">02</span><h4>连接器 / 端子</h4><p>USB / Type-C / 排针 / 端子台</p></div>
+      <div class="ind"><span class="ind__num">03</span><h4>充电器 / 电源</h4><p>GaN / Type-A / 电源适配器</p></div>
+      <div class="ind"><span class="ind__num">04</span><h4>注塑件 / 模具件</h4><p>外壳 / 按键 / 镜片 / 工业件</p></div>
+      <div class="ind"><span class="ind__num">05</span><h4>五金 / 冲压件</h4><p>不锈钢 / 铝合金 / 弹片</p></div>
+      <div class="ind"><span class="ind__num">06</span><h4>PCBA / 焊点</h4><p>SMT 锡桥 / 缺件 / 偏位 / 立碑</p></div>
+      <div class="ind"><span class="ind__num">07</span><h4>玩具 / 礼品</h4><p>注塑+喷涂+印刷综合检测</p></div>
+      <div class="ind ind--more"><span class="ind__num">+</span><h4>更多品类</h4><p>写一份 YAML 就能上线</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CASES ================= -->
+<section id="cases" class="section">
+  <div class="container">
+    <div class="section__head">
+      <div class="eyebrow"><span class="dot"></span>Customer Outcomes</div>
+      <h2 class="section__title">为客户带来什么</h2>
+    </div>
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric__num">↓ 92<span class="unit">%</span></div>
+        <div class="metric__label">人工目检工时</div>
+      </div>
+      <div class="metric">
+        <div class="metric__num">↑ 3.4<span class="unit">×</span></div>
+        <div class="metric__label">出货效率</div>
+      </div>
+      <div class="metric">
+        <div class="metric__num">↓ 68<span class="unit">%</span></div>
+        <div class="metric__label">海外品牌方扣款</div>
+      </div>
+      <div class="metric">
+        <div class="metric__num">2<span class="unit">周</span></div>
+        <div class="metric__label">新品类上线周期</div>
+      </div>
+    </div>
+
+    <div class="testimonials">
+      <blockquote class="t">
+        <p>"键盘瑕疵以前靠两班 12 个 QC，现在 1 台桌面工位接管 80% 的工作。"</p>
+        <footer>— A 客户 · 某代工厂质量经理</footer>
+      </blockquote>
+      <blockquote class="t">
+        <p>"Copilot 把我们 7 种语言的产品详情页生成时间从 2 天压到 20 分钟。"</p>
+        <footer>— B 客户 · 跨境品牌运营负责人</footer>
+      </blockquote>
+      <blockquote class="t">
+        <p>"海外仓退货分拣自动化以后，加州仓单月人力成本下降一半。"</p>
+        <footer>— C 客户 · 海外仓负责人</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INDUSTRY SOLUTIONS ================= -->
+<section id="solutions" class="section section--alt">
+  <div class="container">
+    <div class="section__head">
+      <div class="eyebrow"><span class="dot"></span>SOLUTIONS · 行业解决方案</div>
+      <h2 class="section__title">不只是外贸 — 我们也<em>承接定制项目</em></h2>
+      <p class="section__sub">复用同一套 AI 视觉 + RAG + 多语种 Copilot 底座，向上交付垂直行业的端到端方案。</p>
+    </div>
+
+    <div class="sol-grid">
+      <!-- ========== 智慧医疗 ========== -->
+      <div class="sol-block">
+        <div class="sol-block__head">
+          <div class="sol-block__icon" style="--c:#5eead4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M4 12h16M9 9l6 6M15 9l-6 6"/></svg>
+          </div>
+          <div>
+            <div class="sol-block__cat">CASE I</div>
+            <h3>智慧医疗 · Smart Healthcare</h3>
+            <p class="sol-block__lede">已落地客户：浙大附二、华西、中山、协和等三甲。</p>
+          </div>
+        </div>
+        <div class="sol-row">
+          <div class="sol-card">
+            <h4>云影像系统</h4>
+            <p>胶片→云端，扫码即看，多端访问。覆盖 X 光 / CT / MR / DR。</p>
+            <div class="sol-tags"><span>PACS</span><span>DICOM</span><span>多端</span></div>
+          </div>
+          <div class="sol-card">
+            <h4>AI 辅助诊断</h4>
+            <p>13+ 种疾病自动筛查（肺结节、肋骨骨折、肺炎、乳腺、心血管事件预测等）。</p>
+            <div class="sol-tags"><span>13+ 病种</span><span>三级影像</span></div>
+          </div>
+          <div class="sol-card">
+            <h4>AI 报告质控</h4>
+            <p>报告自动校验、信息核对、字段补全、知识图谱审核，提升报告标准化。</p>
+            <div class="sol-tags"><span>NLP</span><span>知识图谱</span></div>
+          </div>
+          <div class="sol-card">
+            <h4>MDT 远程协同</h4>
+            <p>跨院多学科会诊平台，支持远程影像、视频、电子病历同步流转。</p>
+            <div class="sol-tags"><span>WebRTC</span><span>HIS对接</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== 智能终端 ========== -->
+      <div class="sol-block">
+        <div class="sol-block__head">
+          <div class="sol-block__icon" style="--c:#a78bfa">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/><circle cx="12" cy="19" r="1"/></svg>
+          </div>
+          <div>
+            <div class="sol-block__cat">CASE II</div>
+            <h3>智能终端 · Self-Service Kiosks</h3>
+            <p class="sol-block__lede">医院、政企、社区、商业综合体一体化终端解决方案。</p>
+          </div>
+        </div>
+        <div class="sol-row">
+          <div class="sol-card">
+            <h4>银医通一站式终端</h4>
+            <p>挂号 / 缴费 / 报告打印 / 自助预约 一体机，对接医保、银联、HIS。</p>
+            <div class="sol-tags"><span>15.6"/21.5"/32"</span><span>多模态</span></div>
+          </div>
+          <div class="sol-card">
+            <h4>胶片 / 报告自助打印</h4>
+            <p>影像胶片 + 报告同步打印，扫码取片，30 秒交付。</p>
+            <div class="sol-tags"><span>影像耗材</span><span>排队系统</span></div>
+          </div>
+          <div class="sol-card">
+            <h4>健康评估仪</h4>
+            <p>身高 / 体重 / 血压 / 体脂 / 视力 / 心电 一站式快速健康检测。</p>
+            <div class="sol-tags"><span>19+ 项指标</span><span>iOT 数据</span></div>
+          </div>
+          <div class="sol-card">
+            <h4>健康小屋 · 智能驿站</h4>
+            <p>3-6 ㎡ 模块化健康驿站，老年友好型 UI + 远程医生介入。</p>
+            <div class="sol-tags"><span>模块化</span><span>居家适老</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== 综合应用 ========== -->
+      <div class="sol-block">
+        <div class="sol-block__head">
+          <div class="sol-block__icon" style="--c:#fb923c">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21V12h6v9"/></svg>
+          </div>
+          <div>
+            <div class="sol-block__cat">CASE III</div>
+            <h3>综合应用 · Integrated Solutions</h3>
+            <p class="sol-block__lede">面向地方政府、园区、行业集群的中长尾综合方案。</p>
+          </div>
+        </div>
+        <div class="sol-row">
+          <div class="sol-card">
+            <h4>物联网 + 医院在线</h4>
+            <p>开放医院网，互联网医疗服务新时代，对接公众号 / 小程序 / APP。</p>
+            <div class="sol-tags"><span>互联网医院</span><span>云架构</span></div>
+          </div>
+          <div class="sol-card">
+            <h4>医联体 / 医共体</h4>
+            <p>区域 SPD 模式 + 配送服务整体解决方案，三级 / 二级 / 社区联动。</p>
+            <div class="sol-tags"><span>医联体</span><span>SPD</span></div>
+          </div>
+          <div class="sol-card">
+            <h4>健康城市建设</h4>
+            <p>大健康、大数据、大生态、产业融合 — 健康城市大数据云平台。</p>
+            <div class="sol-tags"><span>大数据</span><span>5G 网络</span></div>
+          </div>
+          <div class="sol-card">
+            <h4>未来社区 / 数字乡村</h4>
+            <p>嵌入式一站式社区健康服务包，覆盖 4-40 ㎡ 智能社区健康站。</p>
+            <div class="sol-tags"><span>1+5+N</span><span>居家适老</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== 跨境出海 ========== -->
+      <div class="sol-block">
+        <div class="sol-block__head">
+          <div class="sol-block__icon" style="--c:#34d399">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          </div>
+          <div>
+            <div class="sol-block__cat">CASE IV</div>
+            <h3>跨境出海 · Cross-Border</h3>
+            <p class="sol-block__lede">基于 YueshangAOI + Copilot 的跨境主线业务。</p>
+          </div>
+        </div>
+        <div class="sol-row">
+          <div class="sol-card">
+            <h4>外贸工厂 AOI 质检</h4>
+            <p>键盘 / 连接器 / 注塑件 / 五金 / PCBA 多品类视觉质检。</p>
+            <div class="sol-tags"><span>7 品类</span><span>2 周上线</span></div>
+          </div>
+          <div class="sol-card">
+            <h4>海外仓退货分拣</h4>
+            <p>FBA / 海外仓退货品 AI 自动判级 + 分流 + 报告生成。</p>
+            <div class="sol-tags"><span>AI 分拣</span><span>WMS 对接</span></div>
+          </div>
+          <div class="sol-card">
+            <h4>出海 Copilot</h4>
+            <p>询盘 / HS Code / 合规 / 详情页 / 买家背调 / 私域 RAG。</p>
+            <div class="sol-tags"><span>8 语种</span><span>6 Agent</span></div>
+          </div>
+          <div class="sol-card">
+            <h4>跨境数据中台</h4>
+            <p>质检数据 + 客户 SLA + 工单流闭环 — 给海外品牌方按周自动推送。</p>
+            <div class="sol-tags"><span>BI 看板</span><span>SLA</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sol-footer">
+      <span>有项目想找我们承接？</span>
+      <a class="btn btn--solid" href="#contact">联系我们</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUCTION SHOWCASE ================= -->
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section__head">
+      <div class="eyebrow"><span class="dot"></span>PORTFOLIO · 已完成产品 + 项目案例</div>
+      <h2 class="section__title">技术不是 PPT，是 <em>commit history</em></h2>
+      <p class="section__sub">从在产工业系统到开源 AI 案例，从跨境电商到医疗 AI 科研合作。下方混合展示不同状态的项目。</p>
+    </div>
+
+    <div class="proj-grid">
+      <a class="proj proj--prod proj--ai" href="https://supergokou.github.io/KeyboardAVI/" target="_blank" rel="noopener">
+        <div class="proj__head">
+          <div class="proj__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h12"/></svg>
+          </div>
+          <span class="proj__status proj__status--prod">● PRODUCTION</span>
+        </div>
+        <h3>YueshangAOI · 键盘 AOI</h3>
+        <p class="proj__en">Industrial Keyboard Defect Detection</p>
+        <p class="proj__desc">已在领益智造产线部署运行，99.2% 键帽检测 mAP / 97.5% 缺陷分类准确率。浏览器 ONNX 即开即用。</p>
+        <div class="proj__tags">
+          <span>YOLOv8</span><span>ONNX</span><span>领益智造</span><span>浏览器端</span>
+        </div>
+        <span class="proj__cta">查看 Live Demo →</span>
+      </a>
+
+      <a class="proj proj--prod proj--violet" href="http://localhost:8090/" target="_blank" rel="noopener">
+        <div class="proj__head">
+          <div class="proj__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+          </div>
+          <span class="proj__status proj__status--prod">● MVP READY</span>
+        </div>
+        <h3>YueshangCopilot · 出海智能</h3>
+        <p class="proj__en">Cross-Border Trade AI Copilot</p>
+        <p class="proj__desc">6 大 Agent + 多语种 RAG。Claude / Qwen / DeepSeek 自由切换。FastAPI + ChromaDB 后端。</p>
+        <div class="proj__tags">
+          <span>Claude</span><span>RAG</span><span>FastAPI</span><span>8 语种</span>
+        </div>
+        <span class="proj__cta">访问 Copilot 站 →</span>
+      </a>
+
+      <a class="proj proj--prod proj--ecom" href="https://github.com/SuperGokou/shuangshuangstore" target="_blank" rel="noopener">
+        <div class="proj__head">
+          <div class="proj__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18l-1.5 11A2 2 0 0 1 17.5 21h-11A2 2 0 0 1 4.5 19L3 8Z"/><path d="M8 8V5a4 4 0 0 1 8 0v3"/></svg>
+          </div>
+          <span class="proj__status proj__status--prod">● PRODUCTION</span>
+        </div>
+        <h3>海外代购 · 跨境电商</h3>
+        <p class="proj__en">Overseas Daigou Platform</p>
+        <p class="proj__desc">面向海外华人的代购电商全栈实现，含商品上架、订单、支付、物流追踪与多语种界面。</p>
+        <div class="proj__tags">
+          <span>Next.js</span><span>Supabase</span><span>支付</span><span>i18n</span>
+        </div>
+        <span class="proj__cta">查看 GitHub →</span>
+      </a>
+
+      <a class="proj proj--os proj--ai" href="https://github.com/SuperGokou/kidsBot" target="_blank" rel="noopener">
+        <div class="proj__head">
+          <div class="proj__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="12" rx="3"/><circle cx="9" cy="12" r="1.2"/><circle cx="15" cy="12" r="1.2"/><path d="M12 6V3M9 18l-1 3M15 18l1 3"/></svg>
+          </div>
+          <span class="proj__cat">AI · 智能体</span>
+        </div>
+        <h3>儿童陪伴机器人</h3>
+        <p class="proj__en">KidsBot · AI Companion</p>
+        <p class="proj__desc">基于 LLM 的儿童陪伴智能体，含语音对话、安全过滤、家长 dashboard。</p>
+        <div class="proj__tags">
+          <span>LLM</span><span>语音</span><span>RAG</span><span>家长管控</span>
+        </div>
+        <span class="proj__cta">查看 GitHub →</span>
+      </a>
+
+      <a class="proj proj--auto" href="https://github.com/SuperGokou/autoloto-demo" target="_blank" rel="noopener">
+        <div class="proj__head">
+          <div class="proj__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m13 3-7 12h6l-1 6 7-12h-6l1-6Z"/></svg>
+          </div>
+          <span class="proj__cat">Automation · 自动化</span>
+        </div>
+        <h3>AutoLoto</h3>
+        <p class="proj__en">Web Automation Demo</p>
+        <p class="proj__desc">浏览器自动化与定时任务调度示例，演示 RPA + 数据采集与可视化的端到端实现。</p>
+        <div class="proj__tags">
+          <span>Playwright</span><span>定时任务</span><span>数据采集</span>
+        </div>
+        <span class="proj__cta">查看 GitHub →</span>
+      </a>
+
+      <a class="proj proj--ecom" href="https://github.com/SuperGokou/shuangshuangstore" target="_blank" rel="noopener">
+        <div class="proj__head">
+          <div class="proj__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18l-1.5 11A2 2 0 0 1 17.5 21h-11A2 2 0 0 1 4.5 19L3 8Z"/><path d="M8 8V5a4 4 0 0 1 8 0v3"/></svg>
+          </div>
+          <span class="proj__cat">E-commerce · 跨境</span>
+        </div>
+        <h3>海外代购</h3>
+        <p class="proj__en">Overseas Daigou Platform</p>
+        <p class="proj__desc">面向海外华人的代购电商全栈实现，含商品上架、订单、支付、物流追踪与多语种界面。</p>
+        <div class="proj__tags">
+          <span>Next.js</span><span>Supabase</span><span>支付</span><span>i18n</span>
+        </div>
+        <span class="proj__cta">查看 GitHub →</span>
+      </a>
+
+      <a class="proj proj--med" href="https://github.com/SuperGokou/child_epilepsy_detect" target="_blank" rel="noopener">
+        <div class="proj__head">
+          <div class="proj__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-7 4 14 2-7 3 7 4 0"/></svg>
+          </div>
+          <span class="proj__cat">Medical AI · 医疗</span>
+        </div>
+        <h3>儿童癫痫检测</h3>
+        <p class="proj__en">Child Epilepsy Detection</p>
+        <p class="proj__desc">基于 EEG 信号的儿童癫痫发作识别模型，含信号预处理、特征提取与深度网络训练管线。</p>
+        <div class="proj__tags">
+          <span>EEG 信号</span><span>CNN</span><span>时序分类</span><span>科研合作</span>
+        </div>
+        <span class="proj__cta">查看 GitHub →</span>
+      </a>
+
+      <a class="proj proj--med" href="https://github.com/SuperGokou/Detection-of-COVID-19-from-X-Ray-Images" target="_blank" rel="noopener">
+        <div class="proj__head">
+          <div class="proj__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-5-1-8-5-8-10V6l8-3 8 3v5c0 5-3 9-8 10Z"/><path d="M9 12h6M12 9v6"/></svg>
+          </div>
+          <span class="proj__cat">Medical AI · 影像</span>
+        </div>
+        <h3>COVID-19 X-Ray 检测</h3>
+        <p class="proj__en">COVID-19 X-Ray Classification</p>
+        <p class="proj__desc">基于胸部 X 光的新冠肺炎辅助筛查模型，迁移学习 + 数据增强，疫情期开源贡献。</p>
+        <div class="proj__tags">
+          <span>X-Ray</span><span>迁移学习</span><span>医学影像</span><span>开源贡献</span>
+        </div>
+        <span class="proj__cta">查看 GitHub →</span>
+      </a>
+
+      <a class="proj proj--more" href="https://github.com/SuperGokou" target="_blank" rel="noopener">
+        <div class="proj__head">
+          <div class="proj__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </div>
+          <span class="proj__cat">More · 更多</span>
+        </div>
+        <h3>查看全部仓库</h3>
+        <p class="proj__en">github.com/SuperGokou</p>
+        <p class="proj__desc">还有 KeyboardAVI 工业 AOI、TaxBot 税务智能体、OpenClaw 安全工具等更多项目。</p>
+        <div class="proj__tags">
+          <span>30+ Repos</span><span>持续更新</span>
+        </div>
+        <span class="proj__cta">访问 GitHub →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section section--alt">
+  <div class="container">
+    <div class="section__head">
+      <div class="eyebrow"><span class="dot"></span>About · 关于我们</div>
+      <h2 class="section__title">顶尖团队，为外贸制造而战</h2>
+      <p class="section__sub">我们的工程师与设计师均来自哈佛、MIT、宾大、斯坦福、普林斯顿等世界顶级学府，具备前 Google / OpenAI / Meta / Stripe / McKinsey 的大厂实战经验。</p>
+    </div>
+
+    <div class="team-stats">
+      <div class="ts"><div class="ts__num">50<span>+</span></div><div class="ts__label">年综合经验</div></div>
+      <div class="ts"><div class="ts__num">5</div><div class="ts__label">所世界顶级名校</div></div>
+      <div class="ts"><div class="ts__num">6</div><div class="ts__label">位大厂资深专家</div></div>
+      <div class="ts"><div class="ts__num">3</div><div class="ts__label">位连续创业者</div></div>
+    </div>
+
+    <div class="unis">
+      <div class="uni" style="--uc:#A51C30"><img class="uni__logo" src="public/universities/harvard.svg" alt="Harvard"/>Harvard</div>
+      <div class="uni" style="--uc:#8A8B8C"><img class="uni__logo" src="public/universities/mit.svg" alt="MIT"/>MIT</div>
+      <div class="uni uni--wide" style="--uc:#011F5B"><img class="uni__logo uni__logo--wide" src="public/universities/upenn.png" alt="UPenn"/>UPenn</div>
+      <div class="uni" style="--uc:#8B0000"><img class="uni__logo" src="public/universities/stanford.svg" alt="Stanford"/>Stanford</div>
+      <div class="uni uni--wide" style="--uc:#FF6600"><img class="uni__logo uni__logo--wide" src="public/universities/princeton.png" alt="Princeton"/>Princeton</div>
+    </div>
+
+    <div class="team-grid">
+      <article class="tm-card" style="--uc:#011F5B">
+        <header>
+          <div class="tm-avatar">WL</div>
+          <div>
+            <h3>Wilson Liu</h3>
+            <p class="tm-role">创始人 &amp; CEO</p>
+          </div>
+        </header>
+        <div class="tm-uni">
+          <span class="tm-dot"></span>
+          <span class="tm-school">UPenn / Wharton</span>
+          <span class="tm-bar">|</span>
+          <span class="tm-degree">MBA, 金融与创业</span>
+        </div>
+        <p class="tm-bio">连续创业者，精通 AI 与金融科技。负责产品愿景与客户战略，确保每个交付项目都达到最高品质标准。</p>
+        <div class="tm-tags"><span>前高盛</span><span>2 次创业</span></div>
+      </article>
+
+      <article class="tm-card" style="--uc:#8A8B8C">
+        <header>
+          <div class="tm-avatar">DC</div>
+          <div>
+            <h3>David Chen</h3>
+            <p class="tm-role">CTO &amp; 首席架构师</p>
+          </div>
+        </header>
+        <div class="tm-uni">
+          <span class="tm-dot"></span>
+          <span class="tm-school">MIT</span>
+          <span class="tm-bar">|</span>
+          <span class="tm-degree">计算机科学硕士</span>
+        </div>
+        <p class="tm-bio">为每个客户项目设计技术架构。曾构建服务 1 亿+ 用户的分布式系统，全面把控代码质量、基础设施与安全。</p>
+        <div class="tm-tags"><span>前 Google Brain</span><span>前 Meta</span></div>
+      </article>
+
+      <article class="tm-card" style="--uc:#8B0000">
+        <header>
+          <div class="tm-avatar">SZ</div>
+          <div>
+            <h3>Sarah Zhang</h3>
+            <p class="tm-role">AI 工程负责人</p>
+          </div>
+        </header>
+        <div class="tm-uni">
+          <span class="tm-dot"></span>
+          <span class="tm-school">Stanford</span>
+          <span class="tm-bar">|</span>
+          <span class="tm-degree">机器学习博士</span>
+        </div>
+        <p class="tm-bio">发表过多篇 AI 论文，将前沿 ML 技术转化为生产级解决方案。负责视觉质检模型与多语种 RAG 系统。</p>
+        <div class="tm-tags"><span>前 OpenAI</span><span>15+ 论文</span></div>
+      </article>
+
+      <article class="tm-card" style="--uc:#A51C30">
+        <header>
+          <div class="tm-avatar">MW</div>
+          <div>
+            <h3>Marcus Williams</h3>
+            <p class="tm-role">产品与体验负责人</p>
+          </div>
+        </header>
+        <div class="tm-uni">
+          <span class="tm-dot"></span>
+          <span class="tm-school">Harvard</span>
+          <span class="tm-bar">|</span>
+          <span class="tm-degree">MBA, 技术与运营</span>
+        </div>
+        <p class="tm-bio">将复杂需求转化为直觉化、高转化率的界面。曾服务数百万终端用户，每一个像素和交互流程都服务于战略目标。</p>
+        <div class="tm-tags"><span>前 Amazon</span><span>前 Shopify</span></div>
+      </article>
+
+      <article class="tm-card" style="--uc:#FF6600">
+        <header>
+          <div class="tm-avatar">EP</div>
+          <div>
+            <h3>Emily Park</h3>
+            <p class="tm-role">高级全栈工程师</p>
+          </div>
+        </header>
+        <div class="tm-uni">
+          <span class="tm-dot"></span>
+          <span class="tm-school">Princeton</span>
+          <span class="tm-bar">|</span>
+          <span class="tm-degree">计算机科学学士</span>
+        </div>
+        <p class="tm-bio">端到端功能交付的核心构建者。曾开发处理 5,000 万+ 美元交易的支付系统，负责从原型到生产的完整交付流程。</p>
+        <div class="tm-tags"><span>前 Stripe</span><span>前 Bloomberg</span></div>
+      </article>
+
+      <article class="tm-card" style="--uc:#A51C30">
+        <header>
+          <div class="tm-avatar">JR</div>
+          <div>
+            <h3>James Rivera</h3>
+            <p class="tm-role">战略与交付负责人</p>
+          </div>
+        </header>
+        <div class="tm-uni">
+          <span class="tm-dot"></span>
+          <span class="tm-school">Harvard</span>
+          <span class="tm-bar">|</span>
+          <span class="tm-degree">MBA, 战略与营销</span>
+        </div>
+        <p class="tm-bio">确保每个项目按时交付且超出预期。曾将多家初创企业从零做到七位数收入，管理客户关系并推动业务成果。</p>
+        <div class="tm-tags"><span>前 McKinsey</span><span>YC 校友</span></div>
+      </article>
+    </div>
+
+    <div class="strengths">
+      <div class="st">
+        <h4>顶级工程人才</h4>
+        <p>每位工程师都持有哈佛、MIT、斯坦福、宾大或普林斯顿学位 — 严谨的问题解决、深厚的技术专长、最高交付标准。</p>
+      </div>
+      <div class="st">
+        <h4>规模化实战经验</h4>
+        <p>团队曾在 Google / Amazon / Stripe / Meta 交付生产系统，同样的纪律应用于您的项目。</p>
+      </div>
+      <div class="st">
+        <h4>真正可用的 AI</h4>
+        <p>由前 OpenAI 博士领衔 AI 工程，构建的智能功能不止于噱头，为真实业务带来可量化价值。</p>
+      </div>
+      <div class="st">
+        <h4>创业级速度</h4>
+        <p>不是大公司里的慢节奏交付。从样板到产线落地，2 周内交付，按你的节奏走。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section id="demo" class="cta">
+  <div class="container cta__inner">
+    <h2>30 天免费试用</h2>
+    <p>把你工厂里最痛的一个品类发给我们，2 周内交付一台桌面 AOI 工位。</p>
+    <div class="cta__row">
+      <a class="btn btn--solid btn--lg" href="#contact">预约方案咨询</a>
+      <a class="btn btn--ghost btn--lg" href="brochure.html" target="_blank">下载电子彩页</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact" class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <div class="brand">
+        <span class="brand__mark"><img src="public/logo/yueshang-mark-128.png" alt="悦尚" /></span>
+        <span class="brand__text">
+          <span class="brand__zh">悦尚科技</span>
+          <span class="brand__en">YUESHANG · TECH</span>
+        </span>
+      </div>
+      <p>悦尚科技有限公司<br/>Yueshang Technology Co., Ltd.</p>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h5>产品</h5>
+        <a href="#aoi">YueshangAOI</a>
+        <a href="#copilot">YueshangCopilot</a>
+        <a href="#cases">YueshangCloud</a>
+      </div>
+      <div>
+        <h5>资源</h5>
+        <a href="brochure.html" target="_blank">公司彩页</a>
+        <a href="#cases">客户案例</a>
+        <a href="#about">关于我们</a>
+      </div>
+      <div>
+        <h5>联系</h5>
+        <a href="mailto:hello@yueshang-tech.com">hello@yueshang-tech.com</a>
+        <a>+86 (0)571 ····-····</a>
+        <a>杭州 · 滨江</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bar">
+    <span>© 2026 悦尚科技有限公司 · All rights reserved.</span>
+    <span>浙ICP备 · ······号</span>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

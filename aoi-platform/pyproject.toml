@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yueshang-aoi"
+version = "0.1.0"
+description = "Yueshang Universal AI Visual Inspection Platform"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [{ name = "Yueshang Technology Co., Ltd." }]
+dependencies = [
+  "opencv-python-headless>=4.8",
+  "numpy>=1.24",
+  "pyyaml>=6.0",
+  "pillow>=10.0",
+  "scikit-image>=0.21",
+  "scikit-learn>=1.3",
+  "tifffile>=2024.1.30",
+  "ultralytics>=8.1",
+  "onnxruntime>=1.17",
+  "rich>=13.0",
+  "pydantic>=2.5",
+  "click>=8.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "pytest-cov", "ruff", "mypy"]
+web = ["fastapi>=0.110", "uvicorn>=0.27"]
+
+[project.scripts]
+yueshang-aoi = "yueshang_aoi.cli.inspect:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

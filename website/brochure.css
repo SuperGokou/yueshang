@@ -1,0 +1,1002 @@
+/* =================================================================
+   悦尚科技 · Company Brochure
+   Print-friendly, A4-landscape spread layout (970x680 logical),
+   designed to feel close to a real printed product brochure
+   while remaining inspectable in browser.
+================================================================= */
+
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
+:root {
+  --brand-1: #2dd4bf;
+  --brand-2: #6366f1;
+  --brand-3: #f59e0b;
+  --gradient: linear-gradient(135deg, #2dd4bf 0%, #6366f1 60%, #f59e0b 110%);
+  --gradient-soft: linear-gradient(135deg, rgba(45,212,191,.10), rgba(99,102,241,.10) 50%, rgba(245,158,11,.10));
+  --ink: #0c1622;
+  --ink-2: #1f2a3a;
+  --muted: #6b7a90;
+  --line: #d9e1ec;
+  --bg: #f6f8fc;
+  --paper: #ffffff;
+  --paper-dark: #0f1722;
+  --accent: #0d9488;
+  --warn: #b91c1c;
+
+  --font-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-en: "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-en), var(--font-zh);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* ====== Toolbar ====== */
+.toolbar {
+  position: fixed; top: 12px; right: 12px; z-index: 100;
+  display: flex; gap: 8px;
+  padding: 8px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  backdrop-filter: blur(8px);
+}
+.tb-btn {
+  background: var(--gradient);
+  color: white; border: 0;
+  font-size: 13px; font-weight: 600;
+  padding: 8px 18px; border-radius: 999px;
+  cursor: pointer;
+}
+.tb-link {
+  font-size: 13px; color: var(--ink); text-decoration: none;
+  padding: 8px 14px; border-radius: 999px;
+}
+.tb-link:hover { background: var(--bg); }
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}
+
+/* ====== Page (A4 landscape spread) ====== */
+.page {
+  width: 297mm;
+  height: 210mm;
+  margin: 18px auto;
+  background: var(--paper);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(15,23,42,0.12);
+  display: flex;
+  flex-direction: column;
+  page-break-after: always;
+}
+@media print { .page { margin: 0; box-shadow: none; } }
+
+.page__inner {
+  flex: 1;
+  padding: 22mm 24mm;
+  display: flex; flex-direction: column;
+}
+.page__inner.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 20mm;
+}
+.page__footer {
+  display: flex; justify-content: space-between;
+  padding: 6mm 24mm;
+  font-size: 9pt; color: var(--muted);
+  letter-spacing: 1px;
+  border-top: 1px solid var(--line);
+}
+.page__footer span:first-child {
+  font-weight: 700;
+  color: var(--accent);
+  font-family: monospace;
+}
+
+.eyebrow {
+  font-size: 9pt;
+  letter-spacing: 3px;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 12pt;
+}
+.page__title {
+  font-size: 22pt;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 18pt;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.page__title em {
+  font-style: normal;
+  background: var(--gradient);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+
+/* ===================================================
+   PAGE 01 · Cover
+=================================================== */
+.page--cover { background: var(--paper-dark); color: white; }
+.cover__bg { position: absolute; inset: 0; overflow: hidden; }
+.cover__glow {
+  position: absolute;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.6;
+}
+.cover__glow--a { top: -200px; left: -150px; background: rgba(45,212,191,0.7); }
+.cover__glow--b { bottom: -260px; right: -200px; background: rgba(99,102,241,0.7); }
+.cover__grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 60% 80% at 50% 50%, black 30%, transparent 80%);
+}
+.cover__content {
+  position: relative; z-index: 2;
+  flex: 1;
+  padding: 22mm 26mm;
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand__mark {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, rgba(45,212,191,0.18), rgba(99,102,241,0.18));
+  border: 1px solid rgba(45,212,191,0.35);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 32px rgba(45,212,191,0.3);
+}
+.brand__mark img {
+  width: 32px; height: 32px;
+  object-fit: contain;
+  filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(45,212,191,0.4));
+}
+.page:not(.page--cover):not(.page--back):not(.page--section-cover) .brand__mark img {
+  filter: none;       /* keep original brown on light pages */
+}
+.page:not(.page--cover):not(.page--back):not(.page--section-cover) .brand__mark {
+  background: rgba(135,121,106,0.08);
+  border-color: rgba(135,121,106,0.25);
+  box-shadow: none;
+}
+.brand__text { display: flex; flex-direction: column; line-height: 1; }
+.brand__zh { font-family: var(--font-zh); font-size: 16pt; font-weight: 700; letter-spacing: 0.5px; }
+.brand__en { font-size: 8pt; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 3px; margin-top: 4px; }
+.page--cover .brand__zh { color: white; }
+.brand--lg .brand__zh { font-size: 22pt; }
+.brand--lg .brand__en { font-size: 10pt; }
+.brand--lg .brand__mark { width: 56px; height: 56px; }
+
+.cover__title {
+  font-size: 56pt;
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: white;
+}
+.cover__title em {
+  font-style: normal;
+  background: var(--gradient);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+.cover__sub {
+  font-size: 14pt;
+  color: rgba(255,255,255,0.7);
+  margin: 14pt 0 0;
+  line-height: 1.5;
+}
+.cover__sub .en {
+  font-size: 11pt; color: rgba(255,255,255,0.5);
+  letter-spacing: 1px;
+}
+.cover__bottom {
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+.cover__bottom small {
+  display: block;
+  font-size: 9pt;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+.cover__qr {
+  width: 90px; height: 90px;
+  background:
+    repeating-linear-gradient(0deg, var(--brand-1), var(--brand-1) 4px, transparent 4px, transparent 8px),
+    repeating-linear-gradient(90deg, var(--brand-1), var(--brand-1) 4px, transparent 4px, transparent 8px);
+  border: 8px solid white;
+  border-radius: 8px;
+  position: relative;
+  background-color: var(--paper-dark);
+}
+
+/* ===================================================
+   PAGE 02 · Contents
+=================================================== */
+.contents__title {
+  font-size: 36pt; font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1; margin: 0 0 14pt;
+  background: var(--gradient);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+.contents__sub { font-size: 11pt; color: var(--muted); margin: 0; line-height: 1.7; }
+.contents__list { display: grid; grid-template-columns: 1fr 1fr; gap: 14pt; }
+.contents__item {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 14pt 16pt;
+}
+.contents__num {
+  display: inline-block;
+  font-size: 8pt; font-weight: 700;
+  color: var(--brand-2);
+  letter-spacing: 2px;
+  margin-bottom: 6pt;
+}
+.contents__item h3 { font-size: 13pt; margin: 0 0 8pt; color: var(--ink); font-weight: 800; }
+.contents__item ol {
+  list-style: none; padding: 0; margin: 0;
+  font-size: 9.5pt; color: var(--muted);
+  line-height: 1.9;
+  counter-reset: c;
+}
+.contents__item li::before {
+  counter-increment: c;
+  content: counter(c, decimal-leading-zero) " ";
+  color: var(--brand-1); font-weight: 600; margin-right: 6px;
+}
+
+/* ===================================================
+   Section divider pages (03, 08, 12, 16)
+=================================================== */
+.page--section-cover {
+  background: var(--paper-dark);
+  color: white;
+}
+.section-cover {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 26mm;
+  position: relative;
+}
+.page--section-cover::before {
+  content: "";
+  position: absolute; top: 0; right: 0;
+  width: 50%; height: 100%;
+  background: var(--gradient);
+  opacity: 0.7;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+}
+.section-cover__num {
+  font-size: 220pt;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  background: var(--gradient);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  position: relative; z-index: 2;
+}
+.section-cover__body { position: relative; z-index: 2; }
+.section-cover__body .eyebrow { color: var(--brand-1); margin-bottom: 14pt; }
+.section-cover__body h2 {
+  font-size: 44pt;
+  font-weight: 900;
+  margin: 0 0 12pt;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.section-cover__body p { font-size: 12pt; color: rgba(255,255,255,0.7); margin: 0; }
+
+/* ===================================================
+   PAGE 04 · Company Profile
+=================================================== */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20pt;
+  margin-bottom: 16pt;
+}
+.profile-text p {
+  font-size: 10.5pt;
+  line-height: 1.85;
+  color: var(--ink-2);
+  margin: 0 0 9pt;
+}
+.profile-text b { color: var(--accent); font-weight: 700; }
+.profile-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8pt;
+}
+.ps {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 12pt;
+  text-align: center;
+}
+.ps--accent {
+  background: var(--gradient);
+  border-color: transparent;
+  color: white;
+}
+.ps__num {
+  font-size: 22pt;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--brand-2);
+  line-height: 1;
+}
+.ps--accent .ps__num { color: white; }
+.ps__num span { font-size: 12pt; }
+.ps__label { font-size: 9pt; color: var(--muted); margin-top: 4pt; }
+.ps--accent .ps__label { color: rgba(255,255,255,0.85); }
+
+.trust-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12pt;
+  padding: 14pt;
+  background: var(--bg);
+  border-radius: 6pt;
+  border-left: 3pt solid var(--brand-1);
+}
+.trust-item h5 { font-size: 8.5pt; margin: 0 0 4pt; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
+.trust-item p { font-size: 10pt; margin: 0; color: var(--ink-2); line-height: 1.5; }
+
+/* ===================================================
+   PAGE 05 · Vision Timeline
+=================================================== */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12pt;
+  margin-bottom: 14pt;
+}
+.tl-item {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 14pt;
+  position: relative;
+}
+.tl-item--current {
+  background: var(--gradient);
+  color: white;
+  border-color: transparent;
+}
+.tl-year {
+  font-size: 24pt; font-weight: 900;
+  line-height: 1; letter-spacing: -0.02em;
+  margin-bottom: 8pt;
+  color: var(--brand-2);
+}
+.tl-item--current .tl-year { color: white; }
+.tl-year small {
+  display: block;
+  font-size: 9pt; font-weight: 600;
+  color: var(--muted);
+  margin-top: 2pt; letter-spacing: 1px;
+}
+.tl-item--current .tl-year small { color: rgba(255,255,255,0.7); }
+.tl-body h4 { font-size: 12pt; margin: 0 0 6pt; font-weight: 800; }
+.tl-body ul { padding-left: 14pt; margin: 0; font-size: 9.5pt; line-height: 1.7; }
+.tl-item--current .tl-body ul { color: rgba(255,255,255,0.92); }
+
+.vision {
+  background: var(--paper-dark);
+  color: white;
+  padding: 16pt 20pt;
+  border-radius: 6pt;
+  display: flex; align-items: flex-start; gap: 12pt;
+}
+.vision__quote {
+  font-size: 40pt; font-weight: 900;
+  line-height: 0.6;
+  background: var(--gradient);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+.vision p { margin: 0; font-size: 11.5pt; line-height: 1.7; color: rgba(255,255,255,0.92); }
+.vision b { background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800; }
+
+/* ===================================================
+   PAGE 06 · Team
+=================================================== */
+.uni-ribbon {
+  display: flex; flex-wrap: wrap; gap: 10pt;
+  justify-content: center;
+  padding: 10pt 0;
+  margin-bottom: 14pt;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.uni-chip {
+  display: inline-flex; align-items: center; gap: 8pt;
+  padding: 6pt 14pt;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-top: 2pt solid var(--uc);
+  border-radius: 6pt;
+  font-family: ui-monospace, monospace;
+  font-size: 10pt; letter-spacing: 1pt;
+  color: var(--ink);
+}
+.uni-chip img { width: 22pt; height: 22pt; object-fit: contain; }
+.uni-chip--w img { width: 32pt; height: 22pt; }
+
+.tm-bro {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10pt;
+}
+.tmb {
+  --uc: var(--brand-1);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 12pt 14pt;
+  border-top: 3pt solid var(--uc);
+}
+.tmb__top { display: flex; align-items: center; gap: 10pt; margin-bottom: 8pt; }
+.tmb__av {
+  width: 30pt; height: 30pt;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--uc) 14%, white);
+  border: 1.2pt solid var(--uc);
+  color: var(--uc);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 11pt;
+  letter-spacing: 0.8px;
+}
+.tmb__top h4 { font-size: 12pt; margin: 0 0 2pt; font-weight: 800; }
+.tmb__top small { font-size: 8.5pt; color: var(--muted); display: block; }
+.tmb p { font-size: 9pt; color: var(--ink-2); margin: 0 0 6pt; line-height: 1.55; }
+.tmb__tags { display: flex; gap: 4pt; flex-wrap: wrap; }
+.tmb__tags span {
+  font-size: 7.5pt;
+  padding: 2pt 8pt;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-family: ui-monospace, monospace;
+  letter-spacing: 0.4pt;
+}
+
+/* ===================================================
+   PAGE 07 · Ecosystem
+=================================================== */
+.eco-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14pt; }
+.eco-block {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 14pt;
+}
+.eco-block h4 {
+  font-size: 11pt; margin: 0 0 10pt;
+  color: var(--accent); font-weight: 800;
+  border-left: 3pt solid var(--brand-1);
+  padding-left: 8pt;
+}
+.eco-tags { display: flex; flex-wrap: wrap; gap: 6pt; }
+.eco-tags span {
+  font-size: 9pt;
+  padding: 4pt 10pt;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid var(--line);
+  color: var(--ink-2);
+}
+
+/* ===================================================
+   PAGE 09 · Architecture
+=================================================== */
+.arch {
+  margin-bottom: 14pt;
+}
+.arch__row {
+  display: flex; align-items: center; gap: 8pt;
+  margin-bottom: 14pt;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.arch__node {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 10pt 14pt;
+  text-align: center;
+  font-size: 10pt; font-weight: 700;
+  min-width: 80pt;
+}
+.arch__node small { display: block; font-size: 8pt; color: var(--muted); font-weight: 500; margin-top: 3pt; }
+.arch__node--in { background: var(--bg); }
+.arch__node--out { background: var(--bg); }
+.arch__node--gradient {
+  background: var(--gradient);
+  color: white;
+  border-color: transparent;
+}
+.arch__node--gradient small { color: rgba(255,255,255,0.85); }
+.arch__arrow { color: var(--brand-1); font-size: 16pt; font-weight: 800; }
+
+.arch__routes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10pt; }
+.route {
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 12pt;
+  background: white;
+  border-top: 3pt solid var(--brand-1);
+}
+.route--b { border-top-color: var(--brand-2); }
+.route--c { border-top-color: var(--brand-3); }
+.route--d { border-top-color: var(--accent); }
+.route h5 { font-size: 11pt; margin: 0 0 4pt; font-weight: 800; }
+.route p { font-size: 9pt; margin: 0; color: var(--muted); line-height: 1.6; }
+
+.arch-note { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10pt; }
+.arch-note > div {
+  background: var(--bg);
+  border-radius: 6pt;
+  padding: 10pt 14pt;
+}
+.arch-note h4 { font-size: 10pt; margin: 0 0 4pt; color: var(--accent); font-weight: 800; }
+.arch-note p { font-size: 9pt; margin: 0; color: var(--ink-2); line-height: 1.6; }
+
+/* ===================================================
+   PAGE 10 · Profiles
+=================================================== */
+.prof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10pt;
+}
+.prof {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 16pt 12pt;
+  text-align: center;
+  position: relative;
+  transition: transform .2s ease;
+}
+.prof__num {
+  font-size: 20pt; font-weight: 900;
+  background: var(--gradient);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  margin-bottom: 8pt;
+  font-family: monospace;
+}
+.prof h4 { font-size: 11pt; margin: 0 0 4pt; font-weight: 800; }
+.prof p { font-size: 8.5pt; color: var(--muted); margin: 0 0 10pt; letter-spacing: 0.5px; }
+.prof__tag {
+  display: inline-block;
+  font-size: 8pt;
+  padding: 3pt 8pt;
+  border-radius: 999px;
+  background: white;
+  color: var(--accent);
+  border: 1px solid rgba(13,148,136,0.3);
+  font-weight: 600;
+}
+.prof--add { background: var(--gradient); }
+.prof--add .prof__num { color: white; -webkit-text-fill-color: white; background: none; }
+.prof--add h4, .prof--add p { color: white; }
+.prof--add .prof__tag { background: rgba(255,255,255,0.2); color: white; border-color: rgba(255,255,255,0.4); }
+
+/* ===================================================
+   PAGE 11 · Deployment
+=================================================== */
+.deploy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14pt; }
+.deploy {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 18pt;
+  display: flex; flex-direction: column;
+}
+.deploy--mid {
+  background: var(--gradient);
+  color: white;
+  border-color: transparent;
+}
+.deploy__head { display: flex; align-items: center; gap: 8pt; margin-bottom: 6pt; }
+.deploy__pill {
+  width: 22pt; height: 22pt;
+  background: white;
+  color: var(--brand-2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 10pt;
+}
+.deploy--mid .deploy__pill { background: white; color: var(--brand-2); }
+.deploy h3 { font-size: 14pt; margin: 0; font-weight: 800; }
+.deploy__lead { font-size: 9pt; color: var(--muted); margin: 0 0 12pt; }
+.deploy--mid .deploy__lead { color: rgba(255,255,255,0.85); }
+.deploy ul { padding-left: 14pt; margin: 0 0 14pt; font-size: 9.5pt; line-height: 1.7; flex: 1; color: var(--ink-2); }
+.deploy--mid ul { color: rgba(255,255,255,0.92); }
+.deploy__price {
+  border-top: 1px solid var(--line);
+  padding-top: 10pt;
+  display: flex; align-items: baseline; gap: 6pt;
+}
+.deploy--mid .deploy__price { border-top-color: rgba(255,255,255,0.3); }
+.deploy__price span {
+  font-size: 22pt; font-weight: 900;
+  background: var(--gradient);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  letter-spacing: -0.02em;
+}
+.deploy--mid .deploy__price span { background: none; -webkit-text-fill-color: white; color: white; }
+.deploy__price small { font-size: 9pt; color: var(--muted); }
+.deploy--mid .deploy__price small { color: rgba(255,255,255,0.85); }
+
+/* ===================================================
+   PAGE 13 · Six Agents
+=================================================== */
+.ag-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10pt;
+  margin-bottom: 14pt;
+}
+.ag {
+  --c: var(--accent);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 14pt;
+  position: relative;
+  border-top: 2pt solid var(--c);
+}
+.ag__icon {
+  width: 26pt; height: 26pt;
+  background: color-mix(in srgb, var(--c) 14%, white);
+  color: var(--c);
+  border-radius: 6pt;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 8pt;
+}
+.ag__icon svg { width: 16pt; height: 16pt; }
+.ag__num {
+  position: absolute; top: 8pt; right: 14pt;
+  font-size: 14pt; font-weight: 900;
+  color: var(--line);
+  font-family: monospace;
+}
+.ag h4 { font-size: 12pt; margin: 0 0 6pt; font-weight: 800; color: var(--c); }
+.ag p { font-size: 9.5pt; color: var(--ink-2); margin: 0; line-height: 1.6; }
+.a-cyan   { --c: #0d9488; }
+.a-violet { --c: #7c3aed; }
+.a-orange { --c: #ea580c; }
+.a-green  { --c: #059669; }
+.a-amber  { --c: #d97706; }
+.a-purple { --c: #9333ea; }
+
+.quote-box {
+  background: var(--gradient-soft);
+  border-left: 3pt solid var(--brand-1);
+  border-radius: 0 6pt 6pt 0;
+  padding: 14pt 18pt;
+}
+.quote-box p {
+  font-size: 13pt; font-style: italic;
+  color: var(--ink); margin: 0 0 6pt;
+  line-height: 1.5;
+}
+.quote-box small { font-size: 9pt; color: var(--muted); }
+
+/* ===================================================
+   PAGE 14 · RAG
+=================================================== */
+.lang-row { display: flex; flex-wrap: wrap; gap: 6pt; margin-bottom: 16pt; }
+.lang {
+  font-size: 10pt; font-weight: 700;
+  padding: 6pt 14pt;
+  border-radius: 999px;
+  background: var(--gradient);
+  color: white;
+}
+.lang:nth-child(2) { background: linear-gradient(135deg, var(--brand-2), var(--brand-3)); }
+.lang:nth-child(3) { background: linear-gradient(135deg, var(--brand-1), var(--brand-3)); }
+.lang:nth-child(4) { background: linear-gradient(135deg, var(--brand-2), var(--brand-1)); }
+.lang:nth-child(5) { background: linear-gradient(135deg, var(--brand-3), var(--brand-1)); }
+.lang:nth-child(6) { background: linear-gradient(135deg, var(--brand-1), var(--brand-2)); }
+.lang:nth-child(7) { background: linear-gradient(135deg, var(--brand-3), var(--brand-2)); }
+.lang:nth-child(8) { background: linear-gradient(135deg, var(--brand-2), var(--brand-1)); }
+
+.rag-flow {
+  display: flex; align-items: center; gap: 8pt;
+  padding: 16pt; background: var(--bg); border-radius: 6pt;
+  margin-bottom: 14pt;
+  flex-wrap: wrap; justify-content: center;
+}
+.rag-step {
+  flex: 1 1 0;
+  min-width: 100pt;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 12pt 8pt;
+  text-align: center;
+}
+.rag-step__icon {
+  width: 30pt; height: 30pt;
+  margin: 0 auto 6pt;
+  background: var(--gradient);
+  color: white;
+  border-radius: 8pt;
+  display: flex; align-items: center; justify-content: center;
+}
+.rag-step__icon svg { width: 18pt; height: 18pt; }
+.rag-step h4 { font-size: 10pt; margin: 0 0 3pt; font-weight: 800; }
+.rag-step small { font-size: 8.5pt; color: var(--muted); }
+.rag-arrow { font-size: 16pt; color: var(--brand-1); font-weight: 800; }
+
+.rag-bullets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10pt; }
+.rb {
+  background: var(--bg);
+  border-radius: 6pt;
+  padding: 12pt 14pt;
+  border-top: 2pt solid var(--brand-1);
+}
+.rb h5 { font-size: 10pt; margin: 0 0 4pt; font-weight: 800; color: var(--accent); }
+.rb p { font-size: 9pt; margin: 0; color: var(--ink-2); line-height: 1.5; }
+
+/* ===================================================
+   PAGE 15 · Pricing
+=================================================== */
+.price-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10pt; }
+.price {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 18pt 16pt;
+  position: relative;
+  display: flex; flex-direction: column;
+}
+.price--popular {
+  background: var(--gradient);
+  color: white;
+  border-color: transparent;
+  transform: scale(1.02);
+}
+.price--enterprise {
+  background: var(--paper-dark);
+  color: white;
+  border-color: transparent;
+}
+.price__tag {
+  position: absolute; top: -8pt; left: 50%; transform: translateX(-50%);
+  font-size: 8.5pt; font-weight: 700;
+  padding: 4pt 12pt;
+  border-radius: 999px;
+  background: var(--brand-3);
+  color: white;
+  letter-spacing: 1px;
+}
+.price h4 { font-size: 14pt; margin: 0 0 6pt; font-weight: 800; }
+.price__cat {
+  font-size: 8pt; font-weight: 700;
+  letter-spacing: 1.5pt; text-transform: uppercase;
+  color: var(--brand-2);
+  font-family: monospace;
+  margin-bottom: 6pt;
+  display: block;
+}
+.price--popular .price__cat { color: rgba(255,255,255,0.6); }
+.price--enterprise .price__cat { color: rgba(255,255,255,0.6); }
+.price__num {
+  font-size: 24pt; font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 4pt 0 4pt;
+  line-height: 1;
+}
+.price__num small { font-size: 11pt; font-weight: 600; opacity: 0.8; margin-left: 4px; }
+.price > p { font-size: 9pt; color: var(--muted); margin: 0 0 10pt; }
+.price--popular > p, .price--enterprise > p { color: rgba(255,255,255,0.85); }
+.price ul {
+  padding-left: 14pt; margin: 0;
+  font-size: 9pt; line-height: 1.8;
+  flex: 1;
+}
+.price--popular ul, .price--enterprise ul { color: rgba(255,255,255,0.92); }
+
+.page__intro {
+  font-size: 10.5pt;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: -8pt 0 14pt;
+  max-width: 720pt;
+}
+.price-note-bro {
+  margin-top: 14pt;
+  padding: 10pt 14pt;
+  background: var(--gradient-soft);
+  border: 1px solid rgba(45,212,191,0.3);
+  border-radius: 6pt;
+  font-size: 9pt;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+.price-note-bro b { color: var(--accent); margin-right: 4pt; }
+
+/* ===================================================
+   PAGE 17 · Scenes
+=================================================== */
+.scene-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10pt; }
+.scene {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 14pt;
+  border-top: 3pt solid var(--brand-1);
+}
+.scene:nth-child(2) { border-top-color: var(--brand-2); }
+.scene:nth-child(3) { border-top-color: var(--brand-3); }
+.scene__num {
+  font-size: 8pt; font-weight: 700; letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 4pt;
+}
+.scene h3 { font-size: 13pt; margin: 0 0 6pt; font-weight: 800; }
+.scene__role { font-size: 9pt; color: var(--brand-2); margin: 0 0 4pt; font-weight: 600; }
+.scene__pain {
+  font-size: 9pt; color: var(--warn);
+  margin: 0 0 10pt;
+  padding: 6pt 8pt;
+  background: rgba(185,28,28,0.06);
+  border-radius: 4pt;
+  border-left: 2pt solid var(--warn);
+}
+.scene h4 { font-size: 9.5pt; margin: 0 0 6pt; font-weight: 800; color: var(--accent); }
+.scene ul { padding-left: 14pt; margin: 0; font-size: 9.5pt; line-height: 1.7; color: var(--ink-2); }
+
+/* ===================================================
+   PAGE 18 · Outcomes
+=================================================== */
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10pt;
+  margin-bottom: 14pt;
+}
+.m {
+  background: var(--gradient);
+  color: white;
+  border-radius: 6pt;
+  padding: 18pt 12pt;
+  text-align: center;
+}
+.m:nth-child(2) { background: linear-gradient(135deg, var(--brand-2), var(--brand-3)); }
+.m:nth-child(3) { background: linear-gradient(135deg, var(--brand-3), var(--brand-1)); }
+.m:nth-child(4) { background: linear-gradient(135deg, var(--brand-1), var(--brand-2)); }
+.m__num {
+  font-size: 32pt; font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.m__num span { font-size: 16pt; }
+.m__label { font-size: 10pt; margin-top: 6pt; color: rgba(255,255,255,0.85); }
+
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10pt; }
+.tm {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 14pt;
+  display: flex; flex-direction: column;
+}
+.tm__quote {
+  font-size: 9.5pt; line-height: 1.7;
+  margin: 0 0 12pt; flex: 1; color: var(--ink-2);
+  font-style: italic;
+}
+.tm__author { display: flex; align-items: center; gap: 8pt; }
+.tm__avatar {
+  width: 26pt; height: 26pt;
+  background: var(--gradient);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 800; font-size: 12pt;
+}
+.tm__author h5 { font-size: 9.5pt; margin: 0; font-weight: 700; }
+.tm__author small { font-size: 8.5pt; color: var(--muted); }
+
+/* ===================================================
+   PAGE 19 · Partners
+=================================================== */
+.partner-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10pt; }
+.pg {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 14pt 18pt;
+}
+.pg h4 { font-size: 12pt; margin: 0 0 8pt; font-weight: 800; color: var(--accent); }
+.pg-list { padding-left: 14pt; margin: 0; font-size: 9.5pt; line-height: 1.85; color: var(--ink-2); }
+.pg p { font-size: 10pt; margin: 0 0 5pt; color: var(--ink-2); line-height: 1.6; }
+.pg--accent { background: var(--gradient); color: white; border-color: transparent; }
+.pg--accent h4 { color: white; }
+.pg--accent p { color: rgba(255,255,255,0.92); }
+.pg .contact { margin-top: 8pt; font-size: 9.5pt; }
+.pg--accent .contact b { color: white; }
+
+/* ===================================================
+   PAGE 20 · Back Cover
+=================================================== */
+.page--back { background: var(--paper-dark); color: white; }
+.back__bg { position: absolute; inset: 0; }
+.back__glow {
+  position: absolute;
+  width: 900px; height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45,212,191,0.5) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(120px);
+}
+.back__content {
+  position: relative; z-index: 2;
+  flex: 1;
+  padding: 26mm;
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+}
+.back__title {
+  font-size: 40pt;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 24pt 0 0;
+  color: white;
+}
+.back__sub { font-size: 13pt; color: rgba(255,255,255,0.6); margin: 8pt 0 0; }
+.back__contact { padding-top: 14pt; }
+.back__row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18pt; }
+.back__row h5 {
+  font-size: 9pt; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--brand-1); margin: 0 0 6pt; font-weight: 800;
+}
+.back__row p { font-size: 11pt; margin: 0 0 4pt; color: rgba(255,255,255,0.92); }
+.back__copy small {
+  font-size: 8pt; color: rgba(255,255,255,0.45);
+  letter-spacing: 1px; text-align: center; display: block;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 14pt;
+}

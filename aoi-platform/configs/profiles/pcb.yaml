@@ -1,0 +1,36 @@
+name: pcb
+display_name_zh: PCBA / 焊点
+display_name_en: PCBA / Solder Points
+description: |
+  Printed-circuit board assembly inspection. Template matching against golden tiles
+  + highpass for solder bridges and missing components.
+
+defect_categories:
+  - { id: 1, code: missing_part,  label_zh: 缺件,   label_en: Missing Part,  severity: critical, group: structural, color: "#990000" }
+  - { id: 2, code: solder_bridge, label_zh: 连焊,   label_en: Solder Bridge, severity: critical, group: structural, color: "#CC0000" }
+  - { id: 3, code: cold_solder,   label_zh: 冷焊,   label_en: Cold Solder,   severity: major,    group: structural, color: "#CC3300" }
+  - { id: 4, code: tombstone,     label_zh: 立碑,   label_en: Tombstone,     severity: critical, group: structural, color: "#FF3300" }
+  - { id: 5, code: misalignment,  label_zh: 偏位,   label_en: Misalignment,  severity: major,    group: structural, color: "#FF6600" }
+  - { id: 6, code: contam,        label_zh: 污染,   label_en: Contamination, severity: minor,    group: contamination, color: "#996633" }
+
+localizer:
+  strategy: threshold
+
+roi_detector:
+  strategy: template_match
+  model_path: data/pcb/template_pad.png
+  params: { threshold: 0.82 }
+
+routes:
+  - name: golden_match
+    enabled: true
+    params:
+      golden_dir: data/pcb/goldens
+      similarity_threshold: 0.85
+  - name: highpass_edge
+    enabled: true
+    params:
+      edge_density_threshold: 0.12
+
+fusion:
+  strategy: any_positive

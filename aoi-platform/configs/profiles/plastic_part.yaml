@@ -1,0 +1,38 @@
+name: plastic_part
+display_name_zh: 注塑件 / 模具件
+display_name_en: Plastic / Injection-Molded Part
+description: |
+  General plastic injection-molded parts: shells, buttons, lenses, housings.
+  Threshold-based localization + grid ROI + OpenCV anomaly + highpass.
+
+defect_categories:
+  - { id: 1, code: flash,        label_zh: 飞边,    label_en: Flash,         severity: major,    group: structural, color: "#FF6600" }
+  - { id: 2, code: short_shot,   label_zh: 缺料,    label_en: Short Shot,    severity: critical, group: structural, color: "#990000" }
+  - { id: 3, code: weld_line,    label_zh: 熔接痕,  label_en: Weld Line,     severity: minor,    group: surface,    color: "#996633" }
+  - { id: 4, code: sink_mark,    label_zh: 缩水,    label_en: Sink Mark,     severity: major,    group: structural, color: "#CC3300" }
+  - { id: 5, code: black_spot,   label_zh: 黑点,    label_en: Black Spot,    severity: minor,    group: point_defect, color: "#333333" }
+  - { id: 6, code: scratch,      label_zh: 划伤,    label_en: Scratch,       severity: major,    group: surface,    color: "#FF9900" }
+  - { id: 7, code: deformation,  label_zh: 变形,    label_en: Deformation,   severity: critical, group: structural, color: "#CC0000" }
+
+localizer:
+  strategy: threshold
+
+roi_detector:
+  strategy: grid
+  params:
+    rows: 1
+    cols: 1
+
+routes:
+  - name: opencv_anomaly
+    enabled: true
+    params:
+      dark_threshold: 45
+      bright_threshold: 235
+  - name: highpass_edge
+    enabled: true
+    params:
+      edge_density_threshold: 0.08
+
+fusion:
+  strategy: any_positive

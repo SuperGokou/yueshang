@@ -1,0 +1,59 @@
+name: keyboard
+display_name_zh: 键盘 / 键帽阵列
+display_name_en: Keyboard / Keycap Array
+description: |
+  Industrial keyboard inspection. Phase1 perspective + Phase2 YOLO keycap detection
+  + Phase3 multi-route surface inspection. Migrated from KeyboardAVI.
+
+defect_categories:
+  - { id: 1, code: bright_mark, label_zh: 亮印, label_en: Bright Mark, severity: major,   group: surface,        color: "#FF6600" }
+  - { id: 2, code: dark_streak, label_zh: 暗痕, label_en: Dark Streak, severity: major,   group: surface,        color: "#CC0000" }
+  - { id: 3, code: front_dent,  label_zh: 正面压伤, label_en: Front Dent, severity: critical, group: structural, color: "#990000" }
+  - { id: 4, code: edge_dent,   label_zh: 边缘压伤, label_en: Edge Dent,  severity: critical, group: structural, color: "#CC3300" }
+  - { id: 5, code: edge_scratch,label_zh: 边缘擦伤, label_en: Edge Scratch, severity: major, group: structural,  color: "#FF9900" }
+  - { id: 6, code: fiber,       label_zh: 毛絮,    label_en: Fiber,         severity: minor, group: contamination, color: "#6600CC" }
+  - { id: 7, code: stain,       label_zh: 脏污,    label_en: Stain,         severity: minor, group: contamination, color: "#996633" }
+  - { id: 8, code: white_dot,   label_zh: 白点,    label_en: White Dot,     severity: minor, group: point_defect, color: "#FFFFFF" }
+  - { id: 9, code: black_dot,   label_zh: 黑点,    label_en: Black Dot,     severity: minor, group: point_defect, color: "#333333" }
+
+localizer:
+  strategy: opencv_perspective
+  params:
+    block_size: 51
+    c: 5
+    min_area_ratio: 0.20
+
+roi_detector:
+  strategy: yolo_box
+  model_path: models/keyboard/keycap_detector.pt
+  params:
+    conf: 0.35
+    max_det: 300
+
+routes:
+  - name: yolo_cls
+    enabled: true
+    weight: 1.0
+    params:
+      model_path: models/keyboard/defect_classifier.pt
+      confidence_threshold: 0.55
+      ok_class: ok
+  - name: golden_match
+    enabled: true
+    weight: 0.8
+    params:
+      golden_dir: data/keyboard/goldens
+      similarity_threshold: 0.78
+  - name: opencv_anomaly
+    enabled: true
+    params:
+      dark_threshold: 55
+      bright_threshold: 225
+  - name: highpass_edge
+    enabled: true
+    params:
+      edge_density_threshold: 0.07
+
+fusion:
+  strategy: any_positive
+  min_routes_for_ng: 1

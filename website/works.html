@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>作品集 · Portfolio · 悦尚科技</title>
+  <meta name="description" content="悦尚科技作品集 — 工业 AOI、出海 Copilot、跨境电商、医疗 AI、AI 智能体等已完成与开源项目集中展示。" />
+  <link rel="icon" type="image/png" href="public/logo/yueshang-mark-128.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="works.css" />
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="index.html" aria-label="悦尚科技">
+      <span class="brand__mark"><img src="public/logo/yueshang-mark-128.png" alt="悦尚" /></span>
+      <span class="brand__text">
+        <span class="brand__zh">悦尚科技</span>
+        <span class="brand__en">YUESHANG · TECH</span>
+      </span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html#products">产品</a>
+      <a href="index.html#aoi">视觉质检</a>
+      <a href="index.html#copilot">出海 Copilot</a>
+      <a href="index.html#solutions">行业方案</a>
+      <a href="works.html" class="active">作品集</a>
+      <a href="index.html#about">关于我们</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="btn btn--ghost" href="https://github.com/SuperGokou" target="_blank">GitHub</a>
+      <a class="btn btn--solid" href="index.html#demo">免费试用</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="works-hero">
+  <div class="hero__bg">
+    <div class="hero__grid"></div>
+    <div class="hero__glow hero__glow--a"></div>
+    <div class="hero__glow hero__glow--b"></div>
+  </div>
+  <div class="container">
+    <div class="eyebrow"><span class="dot"></span>PORTFOLIO · 作品集</div>
+    <h1>把 commit history <em>翻译给客户看</em></h1>
+    <p class="works-hero__sub">从在产工业系统到开源科研项目，从跨境电商到医疗 AI — 这是我们近年沉淀的 8 个真实作品。</p>
+
+    <div class="works-stats">
+      <div><b>8</b><span>真实项目</span></div>
+      <div><b>3</b><span>已上线生产</span></div>
+      <div><b>4</b><span>开源贡献</span></div>
+      <div><b>2</b><span>科研合作</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FILTERS ================= -->
+<section class="works-filter">
+  <div class="container">
+    <div class="filter-row">
+      <button class="chip is-active" data-filter="all">全部 · All</button>
+      <button class="chip" data-filter="production">已上线 · Production</button>
+      <button class="chip" data-filter="opensource">开源 · Open Source</button>
+      <button class="chip" data-filter="research">科研 · Research</button>
+      <button class="chip" data-filter="ai">AI 智能体</button>
+      <button class="chip" data-filter="vision">计算机视觉</button>
+      <button class="chip" data-filter="ecom">跨境电商</button>
+      <button class="chip" data-filter="medical">医疗</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORKS GRID ================= -->
+<section class="works-list">
+  <div class="container">
+
+    <!-- 1. KeyboardAVI -->
+    <article class="work" data-tags="production vision">
+      <div class="work__cover work__cover--keyboard">
+        <img src="public/keyboard_aoi_demo.png" alt="KeyboardAVI 实测样本" loading="lazy"/>
+        <div class="work__legend">
+          <span class="lg lg--ok">OK</span>
+          <span class="lg lg--ng">NG · 标注</span>
+        </div>
+        <span class="work__status work__status--prod">● PRODUCTION</span>
+      </div>
+      <div class="work__body">
+        <div class="work__cat">CASE 01 · 工业视觉</div>
+        <h2>YueshangAOI · 键盘 AOI 检测系统</h2>
+        <p class="work__en">Industrial Keyboard Defect Detection</p>
+        <p class="work__desc">为领益智造产线打造的工业级 AOI 视觉质检系统。三阶段流水线 + 多算法融合，处理 8192×13000px 高分辨率 TIF 图像，识别键帽表面缺陷与结构异常。</p>
+        <div class="work__metrics">
+          <div><b>99.2<i>%</i></b><span>键帽检测 mAP50</span></div>
+          <div><b>97.5<i>%</i></b><span>瑕疵分类准确率</span></div>
+          <div><b>52<i>ms</i></b><span>单张推理</span></div>
+          <div><b>500+</b><span>批量处理上限</span></div>
+        </div>
+        <div class="work__tags">
+          <span>YOLOv8</span><span>ONNX Web</span><span>OpenCV</span><span>TIF 处理</span><span>领益智造</span>
+        </div>
+        <div class="work__links">
+          <a class="btn btn--solid btn--sm" href="https://supergokou.github.io/KeyboardAVI/" target="_blank">Live Demo →</a>
+          <a class="btn btn--ghost btn--sm" href="https://github.com/SuperGokou/KeyboardAVI" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2. YueshangCopilot -->
+    <article class="work" data-tags="production ai">
+      <div class="work__cover work__cover--copilot">
+        <div class="cv-mock">
+          <div class="cv-msg cv-msg--in">"Can you make 5,000 custom-printed mugs by Aug? FOB Shenzhen pricing."</div>
+          <div class="cv-msg cv-msg--out">Hi Mark — happy to help. To send accurate FOB pricing, could you share the print method and target unit price...</div>
+          <div class="cv-tags"><span>EN</span><span>Intent: bulk inquiry</span><span>Auto-followup: 5d</span></div>
+        </div>
+        <span class="work__status work__status--prod">● MVP READY</span>
+      </div>
+      <div class="work__body">
+        <div class="work__cat">CASE 02 · 出海智能</div>
+        <h2>YueshangCopilot · 出海 AI Copilot</h2>
+        <p class="work__en">Cross-Border Trade AI Copilot</p>
+        <p class="work__desc">为外贸 / 出海企业打造的 AI Copilot — 6 大开箱即用 Agent + 多语种 RAG 私域知识库。Claude / Qwen / DeepSeek 自由切换，8 种语言原生支持。</p>
+        <div class="work__metrics">
+          <div><b>6</b><span>开箱 Agent</span></div>
+          <div><b>8<i>语</i></b><span>原生支持</span></div>
+          <div><b>30<i>min</i></b><span>上手时间</span></div>
+          <div><b>∞</b><span>私域文档</span></div>
+        </div>
+        <div class="work__tags">
+          <span>Claude</span><span>Qwen 2.5</span><span>BGE-M3</span><span>ChromaDB</span><span>FastAPI</span><span>RAG</span>
+        </div>
+        <div class="work__links">
+          <a class="btn btn--solid btn--sm" href="http://localhost:8090/" target="_blank">访问 Copilot 站 →</a>
+          <a class="btn btn--ghost btn--sm" href="https://github.com/SuperGokou/yuechangcopilot" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3. 海外代购 -->
+    <article class="work" data-tags="production ecom">
+      <div class="work__cover work__cover--ecom">
+        <div class="ecom-mock">
+          <div class="ecom-grid">
+            <div class="ecom-card"></div>
+            <div class="ecom-card"></div>
+            <div class="ecom-card"></div>
+            <div class="ecom-card"></div>
+            <div class="ecom-card"></div>
+            <div class="ecom-card"></div>
+          </div>
+          <div class="ecom-cart">
+            <span>🛒</span>
+            <div>
+              <b>$ 248.50</b>
+              <small>3 items · CN → US</small>
+            </div>
+          </div>
+        </div>
+        <span class="work__status work__status--prod">● PRODUCTION</span>
+      </div>
+      <div class="work__body">
+        <div class="work__cat">CASE 03 · 跨境电商</div>
+        <h2>海外代购平台</h2>
+        <p class="work__en">Overseas Daigou Platform</p>
+        <p class="work__desc">面向海外华人的代购电商全栈实现：商品上架、订单管理、跨境支付、物流追踪、多语种界面。Next.js + Supabase + Stripe 完整栈。</p>
+        <div class="work__tags">
+          <span>Next.js</span><span>Supabase</span><span>Stripe</span><span>i18n</span><span>跨境物流</span>
+        </div>
+        <div class="work__links">
+          <a class="btn btn--solid btn--sm" href="https://github.com/SuperGokou/shuangshuangstore" target="_blank">GitHub →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4. KidsBot -->
+    <article class="work is-folded" data-tags="opensource ai">
+      <div class="work__cover work__cover--kidsbot">
+        <div class="kb-mock">
+          <div class="kb-bot">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="14" y="20" width="36" height="28" rx="6"/>
+              <circle cx="24" cy="32" r="3"/>
+              <circle cx="40" cy="32" r="3"/>
+              <path d="M32 20V12M24 48l-2 6M40 48l2 6"/>
+              <path d="M28 41h8"/>
+            </svg>
+          </div>
+          <div class="kb-bubbles">
+            <div class="kb-bubble">你好呀！今天想听什么故事？</div>
+            <div class="kb-bubble kb-bubble--user">小恐龙的冒险！</div>
+            <div class="kb-bubble">好呀～从前有一只小恐龙🦕...</div>
+          </div>
+        </div>
+        <span class="work__status work__status--os">○ OPEN SOURCE</span>
+      </div>
+      <div class="work__body">
+        <div class="work__cat">CASE 04 · AI 智能体</div>
+        <h2>KidsBot · 儿童陪伴机器人</h2>
+        <p class="work__en">AI Companion for Kids</p>
+        <p class="work__desc">基于 LLM 的儿童陪伴智能体，含语音对话、故事生成、安全过滤、家长 dashboard。专门优化适龄回复与不良内容拦截。</p>
+        <div class="work__tags">
+          <span>LLM</span><span>Whisper</span><span>TTS</span><span>RAG</span><span>家长管控</span>
+        </div>
+        <div class="work__links">
+          <a class="btn btn--solid btn--sm" href="https://github.com/SuperGokou/kidsBot" target="_blank">GitHub →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5. AutoLoto -->
+    <article class="work is-folded" data-tags="opensource">
+      <div class="work__cover work__cover--auto">
+        <div class="auto-mock">
+          <div class="auto-flow">
+            <div class="auto-step">URL</div>
+            <div class="auto-arr">→</div>
+            <div class="auto-step">Browser</div>
+            <div class="auto-arr">→</div>
+            <div class="auto-step">Parse</div>
+            <div class="auto-arr">→</div>
+            <div class="auto-step auto-step--out">Data</div>
+          </div>
+          <div class="auto-cron">
+            <code>0 9,18 * * * → run.py</code>
+          </div>
+        </div>
+        <span class="work__status work__status--os">○ OPEN SOURCE</span>
+      </div>
+      <div class="work__body">
+        <div class="work__cat">CASE 05 · 自动化</div>
+        <h2>AutoLoto · 浏览器自动化</h2>
+        <p class="work__en">Web Automation Demo</p>
+        <p class="work__desc">浏览器自动化与定时任务调度示例 — 演示 RPA 数据采集、解析、可视化的端到端实现。可作为爬虫模板。</p>
+        <div class="work__tags">
+          <span>Playwright</span><span>Cron</span><span>数据采集</span><span>RPA</span>
+        </div>
+        <div class="work__links">
+          <a class="btn btn--solid btn--sm" href="https://github.com/SuperGokou/autoloto-demo" target="_blank">GitHub →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6. 儿童癫痫检测 -->
+    <article class="work is-folded" data-tags="research medical">
+      <div class="work__cover work__cover--epilepsy">
+        <div class="eeg-mock">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <path d="M0 60 L20 60 L25 30 L30 90 L35 60 L60 60 L65 20 L70 100 L75 60 L100 60 L105 40 L110 80 L115 50 L120 70 L125 60 L160 60 L165 25 L170 95 L175 60 L200 60 L205 35 L210 85 L215 60 L240 60 L245 30 L250 90 L255 60 L280 60 L285 45 L290 75 L295 60 L320 60 L325 28 L330 92 L335 60 L360 60 L365 38 L370 82 L375 60 L400 60" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <div class="eeg-label">EEG · 64 channels</div>
+        </div>
+        <span class="work__status work__status--research">⌖ RESEARCH</span>
+      </div>
+      <div class="work__body">
+        <div class="work__cat">CASE 06 · 医疗 AI</div>
+        <h2>儿童癫痫发作检测</h2>
+        <p class="work__en">Child Epilepsy Detection from EEG</p>
+        <p class="work__desc">基于 EEG 信号的儿童癫痫发作识别模型，含信号预处理、特征提取、深度网络训练 pipeline。与医疗机构科研合作产出。</p>
+        <div class="work__tags">
+          <span>EEG</span><span>CNN-LSTM</span><span>时序分类</span><span>科研合作</span>
+        </div>
+        <div class="work__links">
+          <a class="btn btn--solid btn--sm" href="https://github.com/SuperGokou/child_epilepsy_detect" target="_blank">GitHub →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7. COVID-19 X-Ray -->
+    <article class="work is-folded" data-tags="research medical opensource">
+      <div class="work__cover work__cover--covid">
+        <div class="xray-mock">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+            <ellipse cx="50" cy="50" rx="32" ry="44"/>
+            <path d="M50 12 V80 M50 25c-12 0-22 10-22 22M50 25c12 0 22 10 22 22M30 50c0 10 8 18 20 18M70 50c0 10-8 18-20 18"/>
+          </svg>
+          <div class="xray-result">
+            <span class="xray-pill">COVID-19</span>
+            <small>92.4% 置信</small>
+          </div>
+        </div>
+        <span class="work__status work__status--research">⌖ RESEARCH</span>
+      </div>
+      <div class="work__body">
+        <div class="work__cat">CASE 07 · 医学影像</div>
+        <h2>COVID-19 X-Ray 辅助筛查</h2>
+        <p class="work__en">COVID-19 X-Ray Classification</p>
+        <p class="work__desc">基于胸部 X 光的新冠肺炎辅助筛查模型 — 迁移学习 + 数据增强，疫情期开源贡献。覆盖 3 类：Normal / Viral Pneumonia / COVID-19。</p>
+        <div class="work__tags">
+          <span>X-Ray</span><span>迁移学习</span><span>EfficientNet</span><span>数据增强</span><span>开源</span>
+        </div>
+        <div class="work__links">
+          <a class="btn btn--solid btn--sm" href="https://github.com/SuperGokou/Detection-of-COVID-19-from-X-Ray-Images" target="_blank">GitHub →</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="container fold-bar">
+    <button class="fold-btn" id="foldBtn" aria-expanded="false">
+      <span class="fold-btn__label">展开查看更多 4 个开源 / 科研作品</span>
+      <svg class="fold-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    <div class="fold-bar__hint">
+      还有 30+ 项目在
+      <a href="https://github.com/SuperGokou" target="_blank">github.com/SuperGokou</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta">
+  <div class="container cta__inner">
+    <h2>有项目想找我们承接？</h2>
+    <p>把你的需求发给我们，2 周内交付样板。</p>
+    <div class="cta__row">
+      <a class="btn btn--solid btn--lg" href="index.html#demo">联系合作</a>
+      <a class="btn btn--ghost btn--lg" href="brochure.html" target="_blank">下载电子彩页</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <div class="brand">
+        <span class="brand__mark"><img src="public/logo/yueshang-mark-128.png" alt="" /></span>
+        <span class="brand__text">
+          <span class="brand__zh">悦尚科技</span>
+          <span class="brand__en">YUESHANG · TECH</span>
+        </span>
+      </div>
+      <p>悦尚科技有限公司<br/>Yueshang Technology Co., Ltd.</p>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h5>产品</h5>
+        <a href="index.html#aoi">YueshangAOI</a>
+        <a href="index.html#copilot">YueshangCopilot</a>
+        <a href="index.html#solutions">行业解决方案</a>
+      </div>
+      <div>
+        <h5>资源</h5>
+        <a href="works.html">作品集</a>
+        <a href="brochure.html" target="_blank">公司彩页</a>
+        <a href="https://github.com/SuperGokou" target="_blank">GitHub</a>
+      </div>
+      <div>
+        <h5>联系</h5>
+        <a href="mailto:hello@yueshang-tech.com">hello@yueshang-tech.com</a>
+        <a>+86 (0)571 ····-····</a>
+        <a>杭州 · 滨江</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bar">
+    <span>© 2026 悦尚科技有限公司 · All rights reserved.</span>
+    <span>浙ICP备 · ······号</span>
+  </div>
+</footer>
+
+<script>
+// Folding (default: hide cards beyond first 3)
+const list = document.querySelector('.works-list .container');
+const foldBtn = document.getElementById('foldBtn');
+const foldBar = document.querySelector('.fold-bar');
+
+function setExpanded(expanded) {
+  list.classList.toggle('is-expanded', expanded);
+  foldBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  foldBtn.querySelector('.fold-btn__label').textContent = expanded
+    ? '收起折叠的作品'
+    : '展开查看更多 4 个开源 / 科研作品';
+  foldBtn.classList.toggle('is-up', expanded);
+}
+foldBtn.addEventListener('click', () => {
+  const exp = list.classList.contains('is-expanded');
+  setExpanded(!exp);
+});
+
+// Filter chips
+const chips = document.querySelectorAll('.chip');
+const works = document.querySelectorAll('.work');
+chips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    chips.forEach(c => c.classList.remove('is-active'));
+    chip.classList.add('is-active');
+    const f = chip.dataset.filter;
+
+    // When filtering to anything other than "all", auto-expand and hide bar
+    if (f !== 'all') {
+      setExpanded(true);
+      foldBar.style.display = 'none';
+    } else {
+      // Reset to default folded view
+      setExpanded(false);
+      foldBar.style.display = '';
+    }
+
+    works.forEach(w => {
+      const tags = (w.dataset.tags || '').split(' ');
+      const show = f === 'all' || tags.includes(f);
+      w.dataset.filterHidden = show ? '' : 'true';
+    });
+  });
+});
+</script>
+</body>
+</html>

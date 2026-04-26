@@ -1,0 +1,39 @@
+name: charger
+display_name_zh: 充电器 / 电源适配器
+display_name_en: Charger / Power Adapter
+description: |
+  USB-C / Type-A / GaN charger plastic shell + interface inspection.
+
+defect_categories:
+  - { id: 1, code: shell_crack, label_zh: 外壳开裂, label_en: Shell Crack, severity: critical, group: structural, color: "#990000" }
+  - { id: 2, code: shell_dent,  label_zh: 外壳压痕, label_en: Shell Dent,  severity: major,    group: structural, color: "#CC3300" }
+  - { id: 3, code: print_blur,  label_zh: 印刷模糊, label_en: Print Blur,  severity: major,    group: surface,    color: "#FF6600" }
+  - { id: 4, code: scratch,     label_zh: 划痕,    label_en: Scratch,      severity: major,    group: surface,    color: "#FF9900" }
+  - { id: 5, code: stain,       label_zh: 污点,    label_en: Stain,        severity: minor,    group: contamination, color: "#996633" }
+  - { id: 6, code: port_defect, label_zh: 接口缺陷, label_en: Port Defect, severity: critical, group: structural, color: "#CC0000" }
+
+localizer:
+  strategy: yolo_box
+  params:
+    model_path: models/charger/charger_localizer.pt
+    conf: 0.5
+
+roi_detector:
+  strategy: yolo_box
+  model_path: models/charger/parts_detector.pt
+  params:
+    conf: 0.40
+
+routes:
+  - name: yolo_cls
+    enabled: true
+    params:
+      model_path: models/charger/defect_classifier.pt
+      ok_class: ok
+  - name: golden_match
+    enabled: true
+    params:
+      golden_dir: data/charger/goldens
+
+fusion:
+  strategy: any_positive

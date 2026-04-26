@@ -1,0 +1,35 @@
+name: toy
+display_name_zh: 玩具 / 礼品类
+display_name_en: Toy / Giftware
+description: |
+  General toy/giftware surface inspection. Color-based ROI + golden match for printed
+  surfaces, OpenCV anomaly for paint defects.
+
+defect_categories:
+  - { id: 1, code: paint_defect, label_zh: 喷涂缺陷, label_en: Paint Defect, severity: major, group: surface, color: "#FF6600" }
+  - { id: 2, code: print_offset, label_zh: 印刷偏移, label_en: Print Offset, severity: major, group: surface, color: "#FF9900" }
+  - { id: 3, code: missing_part, label_zh: 缺件,    label_en: Missing Part,  severity: critical, group: structural, color: "#990000" }
+  - { id: 4, code: scratch,      label_zh: 划痕,    label_en: Scratch,       severity: major, group: surface, color: "#CC3300" }
+  - { id: 5, code: stain,        label_zh: 脏污,    label_en: Stain,         severity: minor, group: contamination, color: "#996633" }
+
+localizer:
+  strategy: yolo_box
+  params: { conf: 0.4 }
+
+roi_detector:
+  strategy: yolo_box
+  params: { conf: 0.4 }
+
+routes:
+  - name: yolo_cls
+    enabled: true
+    params: { ok_class: ok, confidence_threshold: 0.55 }
+  - name: golden_match
+    enabled: true
+    params:
+      similarity_threshold: 0.75
+  - name: opencv_anomaly
+    enabled: true
+
+fusion:
+  strategy: any_positive

@@ -4,42 +4,44 @@
    while keeping a unique gradient identity (cyan-violet aurora).
 ================================================================= */
 
-/* ----- Theme tokens (Linear-inspired) ----- */
+/* ----- Theme tokens (Vercel-inspired · pure B&W) ----- */
 :root {
-  /* Surfaces — darkness as the native medium */
-  --bg: #08090a;            /* marketing black */
-  --bg-2: #0f1011;          /* panel dark */
-  --bg-3: #191a1b;          /* level-3 surface */
-  --surface: #28282c;       /* secondary surface (hover) */
-  --surface-2: #1f2024;
-  --line: rgba(255,255,255,0.06);   /* border subtle (default) */
-  --line-2: rgba(255,255,255,0.10); /* border standard */
+  /* Surfaces — pure black, no blue undertone */
+  --bg: #000000;            /* pure black canvas */
+  --bg-2: #0a0a0a;          /* panel */
+  --bg-3: #171717;          /* elevated surface (Vercel gray-900) */
+  --surface: #1f1f1f;
+  --surface-2: #2a2a2a;
+  --line: rgba(255,255,255,0.08);   /* shadow-as-border subtle */
+  --line-2: rgba(255,255,255,0.14); /* shadow-as-border standard */
 
-  /* Text — never pure white */
-  --text: #f7f8f8;          /* primary */
-  --text-muted: #8a8f98;    /* tertiary */
-  --text-dim: #62666d;      /* quaternary */
-  --text-2: #d0d6e0;        /* silver-gray (body) */
+  /* Text — pure white, Vercel's high-contrast voice */
+  --text: #ffffff;          /* pure white (Vercel uses #fff on dark) */
+  --text-muted: #a1a1a1;    /* gray-500 */
+  --text-dim: #666666;      /* gray-600 */
+  --text-2: #ededed;        /* near-white body */
 
-  /* The single chromatic accent */
-  --accent: #7170ff;        /* violet (interactive) */
-  --accent-2: #5e6ad2;      /* indigo (CTA bg) */
-  --accent-3: #828fff;      /* light violet (hover) */
-  --ok: #10b981;
-  --ng: #f87171;
+  /* Accent — Vercel blue for links/CTAs, otherwise the brand IS B&W */
+  --accent: #ffffff;        /* white is the accent on dark Vercel */
+  --accent-2: #ffffff;      /* solid white CTA bg */
+  --accent-3: #fafafa;      /* hover */
+  --accent-blue: #0070f3;   /* Vercel signature blue (links, focus) */
+  --ok: #50e3c2;
+  --ng: #ff5b4f;            /* Vercel ship-red */
 
-  /* Indigo-only gradient (Linear keeps single chroma) */
-  --gradient: linear-gradient(135deg, #5e6ad2 0%, #7170ff 100%);
-  --gradient-soft: linear-gradient(135deg, rgba(94,106,210,.14), rgba(113,112,255,.14));
+  /* Mono accent — drop chromatic gradients */
+  --gradient: linear-gradient(135deg, #ffffff 0%, #a1a1a1 100%);
+  --gradient-soft: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
 
-  --radius: 12px;     /* panel */
-  --radius-sm: 6px;   /* button / input */
+  --radius: 12px;
+  --radius-sm: 6px;         /* Vercel's button radius */
   --radius-card: 8px;
-  --shadow: 0 30px 80px -30px rgba(94,106,210,.35), 0 8px 24px rgba(0,0,0,.4);
+  --shadow-ring: 0 0 0 1px rgba(255,255,255,0.10);  /* Vercel's signature shadow-border */
+  --shadow: 0 0 0 1px rgba(255,255,255,0.10), 0 2px 4px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
 
   --font-zh: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-  --font-en: "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", "Berkeley Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-en: "Geist", "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Monaco, monospace;
 }
 
 * { box-sizing: border-box; }
@@ -51,13 +53,12 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-en), var(--font-zh);
-  font-feature-settings: "cv01", "ss03"; /* Linear's signature OpenType features */
+  font-feature-settings: "liga"; /* Vercel's signature ligatures */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
   font-weight: 400;
   overflow-x: hidden;
-  letter-spacing: -0.011em; /* subtle tightening */
 }
 
 a { color: inherit; text-decoration: none; transition: color .15s ease; }
@@ -103,30 +104,30 @@ a:hover { color: var(--accent); }
   .nav__links { display: none; }
 }
 
-/* =============== BUTTONS (Linear-style) =============== */
+/* =============== BUTTONS (Vercel-style · pure B&W) =============== */
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   height: 36px; padding: 0 16px;
-  border-radius: 6px; /* Linear's comfortable radius */
-  font-size: 13px; font-weight: 510; /* signature weight */
-  letter-spacing: -0.011em;
+  border-radius: 6px;
+  font-size: 14px; font-weight: 500; /* Vercel button weight */
+  letter-spacing: -0.012em;
   cursor: pointer; user-select: none;
-  transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+  border: 0; /* shadow-as-border below */
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease, color .15s ease;
 }
-.btn--lg { height: 44px; padding: 0 22px; font-size: 14px; }
+.btn--lg { height: 44px; padding: 0 22px; font-size: 15px; }
 .btn--solid {
-  background: var(--accent-2); /* brand indigo, no rainbow gradient */
-  color: #ffffff;
-  border: 1px solid color-mix(in srgb, var(--accent-2) 80%, white);
-  box-shadow: 0 1px 0 0 rgba(255,255,255,0.10) inset, 0 4px 14px -4px rgba(94,106,210,0.50);
+  background: #ffffff; /* solid white */
+  color: #000000;       /* pure black text */
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.18);
 }
-.btn--solid:hover { background: var(--accent); transform: translateY(-1px); color: #ffffff; }
+.btn--solid:hover { background: #ededed; color: #000000; transform: translateY(-1px); }
 .btn--ghost {
-  background: rgba(255,255,255,0.02);
-  color: var(--text-2);
-  border: 1px solid var(--line-2);
+  background: transparent;
+  color: var(--text);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.20);
 }
-.btn--ghost:hover { background: rgba(255,255,255,0.05); color: var(--text); }
+.btn--ghost:hover { background: rgba(255,255,255,0.06); box-shadow: 0 0 0 1px rgba(255,255,255,0.30); }
 
 /* =============== HERO =============== */
 .hero {
@@ -150,8 +151,8 @@ a:hover { color: var(--accent); }
   opacity: 0.5;
   pointer-events: none;
 }
-.hero__glow--a { top: -200px; left: -100px; background: rgba(94,106,210,0.35); }
-.hero__glow--b { top: -100px; right: -150px; background: rgba(113,112,255,0.30); }
+.hero__glow--a { top: -200px; left: -100px; background: rgba(255,255,255,0.04); }
+.hero__glow--b { top: -100px; right: -150px; background: rgba(255,255,255,0.03); }
 
 .hero__inner {
   position: relative;
@@ -188,16 +189,17 @@ a:hover { color: var(--accent); }
 }
 
 .hero__title {
-  font-size: clamp(40px, 5.5vw, 68px);
+  font-size: clamp(40px, 5.8vw, 72px);
   line-height: 1.00;
-  font-weight: 510; /* Linear's signature */
-  letter-spacing: -0.022em; /* aggressive negative tracking at display sizes */
+  font-weight: 600; /* Vercel display weight */
+  letter-spacing: -0.045em; /* Vercel's extreme negative tracking — text as compressed code */
   margin: 0 0 24px;
   color: var(--text);
 }
 .hero__title em {
   font-style: normal;
-  color: var(--accent); /* single chromatic accent — drop the rainbow gradient */
+  color: var(--text-muted); /* B&W only — the em is a tonal shift, not a color */
+  font-weight: 600;
 }
 .hero__sub {
   font-size: 18px; color: var(--text-muted);
@@ -217,10 +219,10 @@ a:hover { color: var(--accent); }
 @media (max-width: 600px) { .hero__stats { grid-template-columns: repeat(2, 1fr); } }
 
 .stat__num {
-  font-size: 32px; font-weight: 510;
-  letter-spacing: -0.022em;
+  font-size: 32px; font-weight: 600;
+  letter-spacing: -0.040em;
   color: var(--text);
-  font-feature-settings: "cv01", "ss03", "tnum";
+  font-feature-settings: "liga", "tnum";
 }
 .stat__num .unit { font-size: 16px; margin-left: 2px; opacity: 0.8; }
 .stat__label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
@@ -314,15 +316,15 @@ a:hover { color: var(--accent); }
   margin-bottom: 12px;
 }
 .compass__title {
-  font-size: clamp(26px, 3.4vw, 38px);
-  font-weight: 510;
-  letter-spacing: -0.022em;
+  font-size: clamp(26px, 3.4vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.040em;
   margin: 0 0 10px;
   color: var(--text);
 }
 .compass__title em {
   font-style: normal;
-  color: var(--accent);
+  color: var(--text-muted);
 }
 .compass__sub {
   color: var(--text-muted);
@@ -582,8 +584,8 @@ a:hover { color: var(--accent); }
 .section__head { text-align: center; max-width: 720px; margin: 0 auto 60px; }
 .section__title {
   font-size: clamp(32px, 4vw, 48px);
-  font-weight: 510;
-  letter-spacing: -0.022em;
+  font-weight: 600;
+  letter-spacing: -0.045em;
   margin: 0 0 16px;
 }
 .section__sub { color: var(--text-muted); font-size: 17px; }
@@ -1072,9 +1074,9 @@ a:hover { color: var(--accent); }
   text-align: center;
 }
 .metric__num {
-  font-size: 44px; font-weight: 510;
-  letter-spacing: -0.022em;
-  color: var(--accent);
+  font-size: 44px; font-weight: 600;
+  letter-spacing: -0.045em;
+  color: var(--text);
   background: none;
   -webkit-background-clip: text; background-clip: text;
   color: transparent;

@@ -1,6 +1,6 @@
 # HS Code Reference (示例 / 种子数据)
 
-> 这是为悦尚 Copilot HS Code 助手准备的示例参考。生产部署时应换上完整的中国海关税则 + 主要贸易国 (US HTS, EU TARIC) 数据。
+> 这是为鑫晨 Copilot HS Code 助手准备的示例参考。生产部署时应换上完整的中国海关税则 + 主要贸易国 (US HTS, EU TARIC) 数据。
 
 ## 第 39 章 塑料及其制品 (Plastics)
 

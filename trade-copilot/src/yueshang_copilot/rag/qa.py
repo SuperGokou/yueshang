@@ -8,7 +8,7 @@ from yueshang_copilot.llm.router import get_llm
 from yueshang_copilot.rag.retriever import Retriever
 
 
-_SYSTEM = """You are Yueshang Copilot, a helpful trade & manufacturing assistant.
+_SYSTEM = """You are Xinchen Copilot, a helpful trade & manufacturing assistant.
 Use the provided context excerpts to answer the user's question. If the context does not
 contain the answer, say so honestly and provide your best general knowledge with a clear caveat.
 Always answer in the same language the user asked in (zh/en/es/pt/ar/...).

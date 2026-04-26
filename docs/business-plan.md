@@ -1,4 +1,4 @@
-# 悦尚科技有限公司 · 商业计划单页 (One-Pager)
+# 鑫晨科技有限公司 · 商业计划单页 (One-Pager)
 
 > 2026-04-25 · v1.0
 
@@ -29,7 +29,7 @@
 
 ## What
 
-**悦尚科技** = AI 视觉质检 (YueshangAOI) + 出海 Copilot (YueshangCopilot) + 数据中台 (YueshangCloud)
+**鑫晨科技** = AI 视觉质检 (XinchenAOI) + 出海 Copilot (XinchenCopilot) + 数据中台 (XinchenCloud)
 
 详见 [产品矩阵](product-matrix.md)。
 

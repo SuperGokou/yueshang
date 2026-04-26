@@ -5,11 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "yueshang-aoi"
 version = "0.1.0"
-description = "Yueshang Universal AI Visual Inspection Platform"
+description = "Xinchen Universal AI Visual Inspection Platform"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "Proprietary" }
-authors = [{ name = "Yueshang Technology Co., Ltd." }]
+authors = [{ name = "Xinchen Technology Co., Ltd." }]
 dependencies = [
   "opencv-python-headless>=4.8",
   "numpy>=1.24",

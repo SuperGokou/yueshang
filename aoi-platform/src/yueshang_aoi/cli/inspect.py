@@ -1,4 +1,4 @@
-"""Command-line interface for YueshangAOI."""
+"""Command-line interface for XinchenAOI."""
 from __future__ import annotations
 
 import logging
@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.WARNING, format="%(asctime)s %(levelname)s %(n
 
 @click.group()
 def main():
-    """YueshangAOI · Universal AI Visual Inspection."""
+    """XinchenAOI · Universal AI Visual Inspection."""
 
 
 @main.command("list-profiles")

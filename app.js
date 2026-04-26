@@ -1,4 +1,4 @@
-// Yueshang Tech site interactions
+// Xinchen Tech site interactions
 
 // Tech-stack marquee: clone the badge group once for a seamless loop
 const tsTrack = document.querySelector(".techstack__track");

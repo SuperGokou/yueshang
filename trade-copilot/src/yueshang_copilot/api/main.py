@@ -24,9 +24,9 @@ from yueshang_copilot.rag import qa as rag_qa
 
 
 app = FastAPI(
-    title="YueshangCopilot API",
+    title="XinchenCopilot API",
     version="0.1.0",
-    description="Foreign-trade & cross-border AI Copilot — by Yueshang Technology.",
+    description="Foreign-trade & cross-border AI Copilot — by Xinchen Technology.",
 )
 
 app.add_middleware(

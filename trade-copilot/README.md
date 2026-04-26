@@ -1,6 +1,6 @@
 <div align="center">
 
-# YueshangCopilot
+# XinchenCopilot
 
 **AI Copilot for Foreign-Trade & Cross-Border Business**
 
@@ -12,7 +12,7 @@
 
 ## 概述
 
-YueshangCopilot 是悦尚科技为外贸/出海企业打造的 AI Copilot。它把企业的产品资料、SOP、海关编码库、合规要求等内化成一个可问可答的私域 RAG 知识库，并以**询盘速回 / HS Code / 合规雷达 / 详情页生成 / 买家背调**等开箱即用 Agent 暴露能力。
+XinchenCopilot 是鑫晨科技为外贸/出海企业打造的 AI Copilot。它把企业的产品资料、SOP、海关编码库、合规要求等内化成一个可问可答的私域 RAG 知识库，并以**询盘速回 / HS Code / 合规雷达 / 详情页生成 / 买家背调**等开箱即用 Agent 暴露能力。
 
 ### 核心特性
 
@@ -140,4 +140,4 @@ trade-copilot/
 
 ## License
 
-Proprietary © 2026 悦尚科技有限公司
+Proprietary © 2026 鑫晨科技有限公司

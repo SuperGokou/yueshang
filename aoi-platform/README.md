@@ -1,6 +1,6 @@
 <div align="center">
 
-# YueshangAOI
+# XinchenAOI
 
 **Universal AI Visual Inspection Platform for Manufacturing**
 
@@ -17,7 +17,7 @@
 
 ## 概述
 
-YueshangAOI 是悦尚科技自研的**通用工业视觉质检平台**。它把过去专门为键盘瑕疵检测构建的多路融合 pipeline，抽象成了**配置驱动的产品无关流水线**——一套代码、一套部署、通过 YAML 配置就能切换检测对象（键盘 / 连接器 / 充电器 / 五金件 / 注塑件 / 玩具 / ...）。
+XinchenAOI 是鑫晨科技自研的**通用工业视觉质检平台**。它把过去专门为键盘瑕疵检测构建的多路融合 pipeline，抽象成了**配置驱动的产品无关流水线**——一套代码、一套部署、通过 YAML 配置就能切换检测对象（键盘 / 连接器 / 充电器 / 五金件 / 注塑件 / 玩具 / ...）。
 
 ### 核心特性
 
@@ -140,7 +140,7 @@ aoi-platform/
 
 ## 商业模式
 
-YueshangAOI 提供三种交付形态：
+XinchenAOI 提供三种交付形态：
 
 | 形态 | 适用客户 | 价格区间 |
 |------|---------|---------|
@@ -152,5 +152,5 @@ YueshangAOI 提供三种交付形态：
 
 ## License
 
-Proprietary © 2026 悦尚科技有限公司. All rights reserved.
+Proprietary © 2026 鑫晨科技有限公司. All rights reserved.
 

@@ -1,7 +1,7 @@
 <div align="center">
 
-# 悦尚科技有限公司
-**Yueshang Technology Co., Ltd.**
+# 鑫晨科技有限公司
+**Xinchen Technology Co., Ltd.**
 
 让中国工厂也用得起的 AI 工厂大脑 · AI for Cross-Border Manufacturing
 
@@ -19,7 +19,7 @@
 ## 仓库一览
 
 ```
-Yueshang/
+Xinchen/
 ├── README.md                       ← 你正在看的文件
 ├── docs/
 │   ├── product-matrix.md           ← 产品矩阵
@@ -115,8 +115,8 @@ python -m http.server 8080
 
 | 交付 | 形态 | 状态 |
 |------|------|------|
-| **YueshangAOI** | Python 包 + CLI + 7 个内置 Profile | ✅ 7/7 profile 烟雾测试通过 |
-| **YueshangCopilot** | FastAPI 服务 + 6 大 Agent + 多语种 RAG | ✅ Schema/Config 通过，需 API Key 才能跑 LLM |
+| **XinchenAOI** | Python 包 + CLI + 7 个内置 Profile | ✅ 7/7 profile 烟雾测试通过 |
+| **XinchenCopilot** | FastAPI 服务 + 6 大 Agent + 多语种 RAG | ✅ Schema/Config 通过，需 API Key 才能跑 LLM |
 | **官方网站** | 单页站 (HTML/CSS/JS) | ✅ 可直接 `python -m http.server` 预览 |
 | **公司彩页** | 20 页 A4 横版 HTML，可打印为 PDF | ✅ 浏览器 `Ctrl+P` 即得 PDF |
 | **商业文档** | 产品矩阵 + 商业计划单页 | ✅ Markdown，可直接发投资人 |
@@ -125,7 +125,7 @@ python -m http.server 8080
 
 ## 公司信息
 
-- **名称**: 悦尚科技有限公司 / Yueshang Technology Co., Ltd.
+- **名称**: 鑫晨科技有限公司 / Xinchen Technology Co., Ltd.
 - **总部**: 浙江·杭州
 - **成立**: 2026
 - **创始团队**: AI 视觉算法工程师 + 资深外贸运营人
@@ -133,4 +133,4 @@ python -m http.server 8080
 
 ---
 
-© 2026 悦尚科技有限公司 · All rights reserved.
+© 2026 鑫晨科技有限公司 · All rights reserved.

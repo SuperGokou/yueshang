@@ -1,6 +1,6 @@
 # 新增品类 Profile 指南
 
-YueshangAOI 的核心理念：**新增品类 = 写一份 YAML，不动一行 Python 代码**。
+XinchenAOI 的核心理念：**新增品类 = 写一份 YAML，不动一行 Python 代码**。
 
 ## 步骤
 
